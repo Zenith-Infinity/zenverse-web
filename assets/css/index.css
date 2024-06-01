@@ -1,0 +1,112 @@
+body {
+  font-family: "Montserrat", serif;
+}
+
+video {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+}
+
+.home-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: url("../img/land_page_bg.png") no-repeat center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.home-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mask-bg {
+  width: 100%;
+  height: 190px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#000000),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bottom-effect {
+  width: 100%;
+  height: 240px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.bottom-effect video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.home-logo {
+  position: absolute;
+  left: 40px;
+  z-index: 1;
+}
+
+.nav-logo {
+  position: relative;
+  bottom: 1px;
+}
+
+.signup-btn {
+  font-family: "Changa", serif;
+}
+
+.subcontainer-home {
+  position: relative;
+  top: 280px;
+}
+
+.posbot {
+  margin-top: 20px;
+}
+
+.mainmenu-text {
+  font-family: 'Russo One', serif;
+  text-shadow: 0.12rem 0.12rem 0.12rem rgba(0,0,0,.5);
+  position: relative;
+  bottom: 5px;
+}
+
+.mainmenu-subtext {
+  text-shadow: 0.12rem 0.12rem 0.12rem rgba(0,0,0,.5);
+}
+
+.create-acc {
+  font-family: 'Changa', serif;
+  letter-spacing: 0.3px;
+}

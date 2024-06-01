@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Zenith Interactive Official</title>
+    <link rel="icon" href="./assets/icon/blue-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Russo One">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="h-full min-h-24 max-h-24 flex items-center md:justify-between sm:justify-center justify-center">
+        <span class="flex gap-4 justify-center md:ml-auto md:pr-10 items-center">
+            <!-- Navbar button -->
+            <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                <span>
+                    <img src="assets/icon/about-logo.png" class="nav-logo" alt="" width="11px">
+                </span>&nbsp;ABOUT
+            </button>
+            <a href="pages/main.html#gamelist">
+                <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                    <span>
+                        <img src="assets/icon/games-logo.png" class="nav-logo" alt="" width="11px">
+                    </span>&nbsp;GAMES
+                </button>
+            </a>
+            <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                <span>
+                    <img src="assets/icon/sign-logo.png" class="nav-logo" alt="" width="11px">
+                </span>&nbsp;SIGNIN
+            </button>
+        </span>
+        <!-- Navbar image/Zenith Interactive logo -->
+        <img src="assets/icon/blue-long-logo.png" alt="homelogo" class="home-logo justify-start absolute object-center object-left hidden md:block" width="150px">
+    </nav>
+    
+    <!-- Home section -->
+    <section id="home">
+        <!-- Masking on top -->
+        <div class="mask-bg"></div>
+        <!-- Background video -->
+        <div class="home-bg">
+            <video preload="auto" autoplay muted loop playsinline id="vid-kv">
+                <source src="assets/video/bg-landing.mp4" type="video/mp4" class="src-video">
+            </video>
+        </div>
+        <!-- Looping effect in bottom screen -->
+        <div class="bottom-effect">
+            <video data-v-fx preload="auto" autoplay muted loop class="video-effect">
+                <source src="assets/video/index_loop.mp4" type="video/mp4" class="src-video">
+            </video>
+        </div>
+
+        <!-- Middle content -->
+        <div class="md:container-lg md:mx-auto px-8 h-64 grid grid-rows-3 gap-4 justify-center items-center subcontainer-home">
+
+            <!-- Slogan text -->
+            <p class="text-white text-center text-3xl xs:text-3xl sm:text-4xl md:text-5xl font-medium drop-shadow-2xl mainmenu-text textfx">Journey Beyond The Horizon</p>
+            <div class="z-10 flex flex-col items-center posbot">
+                <hr class="w-64 h-1 md:h-1 sm:h-1 xs:h-1 my-4 bg-white border-0 rounded">
+                <span class="flex justify-center gap-4 py-2">
+                    <!-- Create Account middle button -->
+                    <button class="create-acc md:px-4 md:py-1 text-white border-2 border-white rounded-lg shadow-transparent bg-[#d8b57c]/50 px-4 py-1 hover:bg-[#6c5531]/50 hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                        CREATE ACCOUNT
+                    </button>
+                    <!-- List Game middle button -->
+                    <a href="pages/main.html">
+                        <button class="create-acc md:px-4 md:py-1 text-white border-2 border-white rounded-lg shadow-transparent bg-black/50 px-4 py-1 hover:bg-[#6c5531]/50 hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                            MAIN MENU
+                        </button>
+                    </a>
+                </span>
+
+            <!-- Home description -->
+                <p class="text-white md:text-sm text-xs text-center font-medium drop-shadow-2x py-3 mainmenu-subtext">
+                    a digital distribution platform dedicated to provide immersive worlds<br>and unforgettable experiences.
+                </p>
+            </div>
+
+            <!-- QR image -->
+
+            <!-- <div class="relative h-auto flex justify-center items-center">
+                <div class="fixed bottom-0 md:right-0 mb-8 md:mr-8 flex justify-center items-center">
+                    <div class="flex justify-center items-center py-2">
+                        <a href="https://github.com/hrisz/zenith_project" class="w-20 md:w-28 sm:w-20">
+                            <img class="outline shadow-transparent hover: hover:outline-[#d8b57c] hover:shadow-xl hover:shadow-[#d8b57c]/50 outline-offset-2" src="assets/img/qr-code.png" alt="" width="100px">
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            
+        </div>
+    </section>
+<script src="assets/js/main-scramble.js"></script>
+</body>
+
+</html>

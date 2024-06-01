@@ -1,0 +1,106 @@
+.point-none {
+    pointer-events: none;
+}
+
+.point-enable {
+    pointer-events: all;
+}
+
+.font-land {
+    font-family: "Kanit", serif;
+}
+
+.header-text {
+    font-family: "Changa", serif;
+}
+
+.nav-logo {
+    position: relative;
+    bottom: 1px;
+}
+
+.nav-sticky {
+    z-index: 100;
+    position: fixed;
+    top: -1px;
+    left: 0;
+}
+
+.bg-gamenu {
+    background-image: url(../img/img-bg_001.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 110vh;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+}
+
+.bottom-effect {
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 50%;
+}
+  
+.bottom-effect video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    z-index: -1;
+}
+
+.homeland-mob-bg {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.homeland-mob-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desc-homeland-mob {
+    font-family: 'REM', serif;
+    font-weight: 500;
+}
+
+.text-hov {
+    color: white;
+}
+
+.text-hov:hover {
+    color: rgb(31, 31, 31);
+}
+
+#carouselExampleSlidesOnly .carousel-inner,
+#carouselExampleSlidesOnly .carousel-item,
+#carouselExampleSlidesOnly{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-position {
+    object-position: 80% center;
+}
+
+@media (max-width: 768px) {
+    .carousel-position {
+        object-position: 50% 72%;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-position {
+        object-position: 50% 72%;
+    }
+}
