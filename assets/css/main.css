@@ -6,12 +6,12 @@
     pointer-events: all;
 }
 
-.font-land {
-    font-family: "Kanit", serif;
-}
-
 .header-text {
     font-family: "Changa", serif;
+}
+
+.header-listgame {
+    font-family: "Outfit", serif;
 }
 
 .nav-logo {
@@ -33,9 +33,9 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    background-image: url(../img/zzz_wp.jpg);
+    background-image: url(../img/splash_bg_in.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 42% center;
     background-size: cover;
     background-attachment: fixed;
     transition: 1s;

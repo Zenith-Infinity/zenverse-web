@@ -19,8 +19,10 @@ This website is currently made by myself with reference from some hoyo websites.
 |Made a landing page | 22/5/2024 | Major Update |
 |Made a main menu & game list section | 26/5/2024 | Major Update |
 |Responsive for mobile screen | 27/5/2024 | Minor Update |
-|Remove animated background for mobile | 6/2/2024 | Minor Update |
-|Adding splash screen | 6/2/2024 | Minor Update |
+|Remove animated background for mobile | 2/6/2024 | Minor Update |
+|Adding splash screen | 2/6/2024 | Minor Update |
+|Change splash screen background | 3/6/2024 | Minor Update |
+|Test splash screen run after loaded elements | 3/6/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)
