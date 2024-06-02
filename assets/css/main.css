@@ -26,6 +26,7 @@
     left: 0;
 }
 
+
 .bg-gamenu {
     background-image: url(../img/img-bg_001.png);
     background-repeat: no-repeat;
@@ -60,6 +61,8 @@
     pointer-events: none;
     z-index: -2;
     overflow: hidden;
+    background: url("../img/main_page_bg.png") no-repeat center;
+    background-size: cover;
 }
 
 .homeland-mob-bg video {
