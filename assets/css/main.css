@@ -26,6 +26,50 @@
     left: 0;
 }
 
+.splash {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/zzz_wp.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: 1s;
+}
+
+.splash-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    display: flex;          
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-logo {
+    /* position: absolute; */
+    display: inline-block;
+    bottom: -20px;
+    opacity: 1;
+}
+
+.splash-logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.splash-logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
 
 .bg-gamenu {
     background-image: url(../img/img-bg_001.png);
@@ -61,7 +105,7 @@
     pointer-events: none;
     z-index: -2;
     overflow: hidden;
-    background: url("../img/main_page_bg.png") no-repeat center;
+    background: url("../img/main_mobile_wp.png") no-repeat center;
     background-size: cover;
 }
 

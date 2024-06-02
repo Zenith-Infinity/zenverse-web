@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
+
+  <div class="splash border-5 border-transparent border-b-gray-500 rounded-lg">
+    <h1 class="splash-header gap-2">
+      <span class="splash-logo text-2xl"><img src="../assets/icon/blue-long-logo.png" class="bg-black px-4 py-2 w-64 rounded-lg" alt=""></span>
+    </h1>
+  </div>
+
     <nav class="nav-sticky navbar z-10 backdrop-blur-lg bg-black/60 flex items-center md:justify-between sm:justify-center justify-center p-2 w-full">
         <a class="navbar-brand hidden md:block ml-5" href="#">
           <img src="../assets/icon/blue-long-logo.png" alt="Bootstrap" width="120" height="24">
@@ -36,8 +43,7 @@
                   <img src="../assets/icon/games-logo.png" class="nav-logo" alt="" width="11px">
                 </span>&nbsp;GAMES
             </button>
-        </a>
-          <div class="gap-4"></div>
+          </a>
           <a href="https://github.com/hrisz">
               <button class="header-text border-2 border-transparent border-l-white shadow-transparent hover:border-l-[#4DA6FF] hover:border-b-[#4DA6FF] transition px-2 py-1 text-white text-sm flex items-center ml-auto hover:shadow-xl hover:shadow-[#4D4DFF]/50">
                   <span>
@@ -140,9 +146,6 @@
       </a>
 
       <div class="homeland-mob-bg block xl:hidden md:hidden sm:hidden xs:block">
-        <video preload="auto" autoplay muted loop playsinline id="vid-kv" class="brightness-50 ">
-            <source src="../assets/video/mobile_bgvid.mp4" type="video/mp4">
-        </video>
         <div class="absolute inset-0 flex items-center justify-center text-white z-10">
           <div class="text-center">
               <div class="px-4 border-3 border-transparent border-b-white"><span class="flex justify-center items-center mb-3"><img src="../assets/icon/blue-long-logo.png" alt="" width="200"></span></div>
@@ -212,5 +215,6 @@
       </div>
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../assets/js/controls.js"></script>
 </body>
 </html>
