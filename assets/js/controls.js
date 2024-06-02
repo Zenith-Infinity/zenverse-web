@@ -3,31 +3,33 @@ let logo = document.querySelector('.splash-header');
 let logoSpan = document.querySelectorAll('.splash-logo');
 
 window.onload = () => {
-    setTimeout(() => {
-        logoSpan.forEach((span, idx) => {
-            setTimeout(() => {
-                span.classList.add('active');
-            }, (idx + 1) * 400);
-        });
+
+    let img = new Image();
+    img.src = '../assets/img/splash_bg_out.png';
+
+    img.onload = () => {
 
         setTimeout(() => {
             logoSpan.forEach((span, idx) => {
                 setTimeout(() => {
-                    span.classList.remove('active');
-                    span.classList.add('fade');
-                }, (idx + 1) * 50);
+                    span.classList.add('active');
+                }, (idx + 1) * 400);
             });
-        }, 2000);
 
-        setTimeout(() => {
-            let img = new Image();
-            img.src = '../assets/img/splash_bg_out.png';
+            setTimeout(() => {
+                logoSpan.forEach((span, idx) => {
+                    setTimeout(() => {
+                        span.classList.remove('active');
+                        span.classList.add('fade');
+                    }, (idx + 1) * 50);
+                });
+            }, 2000);
 
-            img.onload = () => {
+            setTimeout(() => {
                 splash.style.top = '-100vh';
                 splash.style.opacity = '90%';
                 splash.style.backgroundImage = 'url("../assets/img/splash_bg_out.png")';
-            };
-        }, 2250);
-    });
+            }, 2250);
+        }, 0);
+    };
 };
