@@ -20,9 +20,14 @@ window.onload = () => {
         }, 2000);
 
         setTimeout(() => {
-            splash.style.top = '-100vh';
-            splash.style.opacity = '90%';
-            splash.style.backgroundImage = 'url("../assets/img/splash_bg_out.png")';
+            let img = new Image();
+            img.src = '../assets/img/splash_bg_out.png';
+
+            img.onload = () => {
+                splash.style.top = '-100vh';
+                splash.style.opacity = '90%';
+                splash.style.backgroundImage = 'url("../assets/img/splash_bg_out.png")';
+            };
         }, 2250);
     });
 };
