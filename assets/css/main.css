@@ -116,6 +116,18 @@
     color: white;
 }
 
+.bg-gamenu {
+    background-image: url(../img/img-bg_001.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 110vh;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+}
+
 .text-hov:hover {
     color: rgb(31, 31, 31);
 }
