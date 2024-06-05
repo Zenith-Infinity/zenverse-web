@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZenPlay Demo</title>
+    <title>Zenith Interactive Official</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="../assets/icon/blue-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
@@ -76,7 +76,7 @@
         <div class="carousel-indicators gap-4">
           <span>
             <center>
-              <img src="../assets/img/gi_banner.jpeg" class="border-3 rounded-lg border-red-500" alt="" width="120">
+              <img src="../assets/img/gi_banner.jpeg" class="border-3 rounded-lg border-yellow-500" alt="" width="120">
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             </center>
           </span>
@@ -108,12 +108,12 @@
               <div class="flex flex-col space-y-4 px-10 max-w-screen-md">
                 <img src="../assets/icon/genshin_logo.png" class="rounded-lg" alt="" width="60">
                 <h5 class="md:text-5xl sm:text-4xl font-bold">Genshin Impact</h5>
-                <h5 class="md:text-4xl sm:text-3xl font-bold text-pretty">Latest Updates on Version 4.6 "Two Worlds Aflame, the Crimson Night Fades"</h5>
+                <h5 class="md:text-4xl sm:text-3xl font-bold text-pretty">Latest Updates on Version 4.7 "An Everlasting Dream Intertwined"</h5>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="../assets/img/hsr_main_banner.png" class="d-block w-100 w-full h-full object-cover brightness-50" alt="...">
+            <img src="../assets/img/hsr_main_banner.png" class="d-block w-100 w-full h-full object-cover brightness-75" alt="...">
             <div class="pointer-events-none absolute inset-0 flex items-center pl-10 justify-start text-white text-shadow-lg">
               <div class="flex flex-col space-y-4 px-10 max-w-screen-md">
                 <img src="../assets/icon/hsr_logo.png" class="rounded-lg" alt="" width="60">
@@ -128,7 +128,7 @@
               <div class="flex flex-col space-y-4 px-10 max-w-screen-md">
                 <img src="../assets/icon/zzz_logo.png" class="rounded-lg" alt="" width="60">
                 <h5 class="md:text-5xl sm:text-4xl font-bold ">Zenless Zone Zero</h5>
-                <h5 class="md:text-4xl sm:text-3xl font-bold text-pretty">Warm-Up Necessary</h5>
+                <h5 class="md:text-4xl sm:text-3xl font-bold text-pretty">Welcome to New Eridu —  Where Humanity Rises Anew!</h5>
               </div>
             </div>
           </div>
@@ -168,52 +168,81 @@
     
     <!-- Game List Section -->
 
-    <section id="gamelist">
-      <div class="bg-gamenu">
-        <div class="container-lg pt-20">
+    <section id="gamelist" class="overflow-y-auto h-screen max-h-screen">
+      <div class="bg-fixed bg-center bg-no-repeat bg-cover" style="background-image: url(../assets/img/img-bg_001.png);">
+        <div class="container-lg py-20">
           <p class="flex text-md md:justify-start justify-center items-center md:text-5xl text-3xl header-listgame text-white border-4 border-transparent md:border-l-white md:border-r-transparent border-x-white">
             &nbsp; <img src="../assets/icon/ui/games-logo.png" alt="" class="nav-logo w-10 md:ml-3">&nbsp; <span class="px-2 md:px-3 md:py-1 rounded-lg bg-gradient-to-r from-[#8278DA]/75 to-[#121C84]/50">Games</span>
           </p>
           <br>
-
           <!-- List game in grid -->
-          <div class="cards pt-10 grid grid-cols-4 gap-4">
-            <a href="#" class="backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
-              <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
+          <div class="cards pt-10 grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-10">
+            <a href="#gamelist" class="block backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
+              <div class="border-3 p-3 rounded-lg shadow-lg">
+                <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url(https://i.ibb.co.com/mHYJ1R3/gi-gamebanner.png);">
+                </div>
+                <div class="flex items-center md:mt-3">
                   <img src="../assets/icon/genshin_logo.png" alt="" width="60" class="rounded-md">
                   <div class="ml-4 text-2xl font-semibold truncate">Genshin Impact</div>
+                </div>
               </div>
             </a>
-            <a href="#" class="backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
-              <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
+            
+            <a href="#gamelist" class="block backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
+              <div class="border-3 p-3 rounded-lg shadow-lg">
+                <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url('https://i.ibb.co.com/c3d6fcf/hsr-gamebanner.png');">
+                </div>
+                <div class="flex items-center md:mt-3">
                   <img src="../assets/icon/hsr_logo.png" alt="" width="60" class="rounded-md">
                   <div class="ml-4 text-2xl font-semibold truncate">Honkai: Star Rail</div>
+                </div>
               </div>
             </a>
-            <a href="#" class="backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
-              <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
+
+            <a href="#gamelist" class="block backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
+              <div class="border-3 p-3 rounded-lg shadow-lg">
+                <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url('https://i.ibb.co.com/BnrtBMS/zzz-gamebanner.png');">
+                </div>
+                <div class="flex items-center md:mt-3">
                   <img src="../assets/icon/zzz_logo.png" alt="" width="60" class="rounded-md">
                   <div class="ml-4 text-2xl font-semibold truncate">Zenless Zone Zero</div>
+                </div>
               </div>
             </a>
-            <a href="#" class="backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
-              <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
+
+            <a href="#gamelist" class="block backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
+              <div class="border-3 p-3 rounded-lg shadow-lg">
+                <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url('https://i.ibb.co.com/hYyjhY9/hi3-gamebanner.png');">
+                </div>
+                <div class="flex items-center md:mt-3">
                   <img src="../assets/icon/hi3-logo.png" alt="" width="60" class="rounded-md">
-                  <div class="ml-4 text-2xl font-semibold truncate">Honkai Impact 3rd Part 2</div>
+                  <div class="ml-4 text-2xl font-semibold truncate">Honkai Impact 3rd</div>
+                </div>
               </div>
             </a>
-            <a href="#" class="backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
-              <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
+
+            <a href="#gamelist" class="block backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
+              <div class="border-3 p-3 rounded-lg shadow-lg">
+                <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url('https://i.ibb.co.com/17wqVDg/tof-gamebanner.jpg');">
+                </div>
+                <div class="flex items-center md:mt-3">
                   <img src="../assets/icon/tof_logo.png" alt="" width="60" class="rounded-md">
                   <div class="ml-4 text-2xl font-semibold truncate">Tower of Fantasy</div>
+                </div>
               </div>
             </a>
-            <a href="#" class="backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
-              <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
+
+            <a href="#gamelist" class="block backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
+              <div class="border-3 p-3 rounded-lg shadow-lg">
+                <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url('https://i.ibb.co.com/k8mjrLg/wuwa-gamebanner.png');">
+                </div>
+                <div class="flex items-center md:mt-3">
                   <img src="../assets/icon/wuthering_logo.png" alt="" width="60" class="rounded-md">
                   <div class="ml-4 text-2xl font-semibold truncate">Wuthering Waves</div>
+                </div>
               </div>
             </a>
+
             <a href="#" class="pointer-events-none backdrop-blur-xl hover:bg-white text-hov transform hover:scale-105 hover:bg-gray-500 transition duration-300 rounded-lg">
               <div class="border-3 p-3 rounded-lg shadow-lg flex items-center">
                   <img src="../assets/icon/ui/Image_not_available.png" alt="" width="60" class="animate-pulse grayscale">

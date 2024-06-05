@@ -23,6 +23,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Adding splash screen | 2/6/2024 | Minor Update |
 |Change splash screen background | 3/6/2024 | Minor Update |
 |Test splash screen run after loaded elements | 3/6/2024 | Minor Update |
+|Add banner into game list | 6/6/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)

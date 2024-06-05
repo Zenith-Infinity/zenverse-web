@@ -1,3 +1,7 @@
+#gamelist::-webkit-scrollbar {
+    display: none;
+}
+
 .point-none {
     pointer-events: none;
 }
@@ -69,18 +73,6 @@
     bottom: 150px;
     opacity: 0;
     transition: ease-in-out 0.5s;
-}
-
-.bg-gamenu {
-    background-image: url(../img/img-bg_001.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 110vh;
-    margin: 0;
-    padding: 0;
-    position: sticky;
 }
 
 .bottom-effect {
