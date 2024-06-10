@@ -2,6 +2,9 @@ let splash = document.querySelector('.splash');
 let logo = document.querySelector('.splash-header');
 let logoSpan = document.querySelectorAll('.splash-logo');
 
+let preloadedImage = new Image();
+preloadedImage.src = '../assets/img/splash_bg_in.png';
+
 window.onload = () => {
 
     let img = new Image();
