@@ -26,6 +26,8 @@ This website is currently made by myself with reference from some hoyo websites.
 |Test splash screen run after loaded elements | 3/6/2024 | Minor Update |
 |Add banner into game list | 6/6/2024 | Minor Update |
 |Add login page | 11/6/2024 | Major Update |
+|Add Toggle and transition in login card | 11/6/2024 | Minor Update |
+|Customizing login card background to blurred one | 11/6/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)

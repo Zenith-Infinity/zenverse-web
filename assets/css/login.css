@@ -1,5 +1,6 @@
 body {
-    font-family: "Montserrat", serif;
+    font-family: "Poppins", serif;
+    overflow: hidden;
 }
 
 div {
@@ -25,4 +26,14 @@ div {
 
 .positioning {
     background-position: 10% center;
+}
+
+.transition-opacity {
+    transition: opacity 0.5s ease;
+}
+.opacity-0 {
+    opacity: 0;
+}
+.opacity-100 {
+    opacity: 1;
 }
