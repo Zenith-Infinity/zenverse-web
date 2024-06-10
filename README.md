@@ -9,6 +9,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Landing page | Done✅|
 |Main Menu | Done✅|
 |List game section | Done✅|
+|Login page | Done✅|
 |Detailed game info page | In development❗|
 |Publish game form menu | In development❗|
 |etc.| Still on planning |
@@ -24,6 +25,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Change splash screen background | 3/6/2024 | Minor Update |
 |Test splash screen run after loaded elements | 3/6/2024 | Minor Update |
 |Add banner into game list | 6/6/2024 | Minor Update |
+|Add login page | 11/6/2024 | Major Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)
