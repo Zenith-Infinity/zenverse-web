@@ -28,6 +28,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Add login page | 11/6/2024 | Major Update |
 |Add Toggle and transition in login card | 11/6/2024 | Minor Update |
 |Customizing login card background to blurred one | 11/6/2024 | Minor Update |
+|Add scrolling in game list | 11/6/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)
