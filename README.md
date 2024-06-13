@@ -10,7 +10,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Main Menu | Done✅|
 |List game section | Done✅|
 |Login page | Done✅|
-|Detailed game info page | In development❗|
+|Detailed game info page | Done✅|
 |Publish game form menu | In development❗|
 |etc.| Still on planning |
 
@@ -26,9 +26,10 @@ This website is currently made by myself with reference from some hoyo websites.
 |Test splash screen run after loaded elements | 3/6/2024 | Minor Update |
 |Add banner into game list | 6/6/2024 | Minor Update |
 |Add login page | 11/6/2024 | Major Update |
-|Add Toggle and transition in login card | 11/6/2024 | Minor Update |
+|Add toggle and transition in login card | 11/6/2024 | Minor Update |
 |Customizing login card background to blurred one | 11/6/2024 | Minor Update |
 |Add scrolling in game list | 11/6/2024 | Minor Update |
+|Add detailed game info page | 14/6/2024 | Major Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)
