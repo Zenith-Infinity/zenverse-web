@@ -61,34 +61,36 @@
     <!-- Upside Page (banner, logo, title, etc) -->
 
     <section id="gameDetails">
-        <div class="bg-local bg-center bg-no-repeat bg-cover" style="background-image: url(../assets/img/genshin_main_banner.png); height: 100vh;">
-            <div class="shadow-mask content-end py-20 md:pl-20 pl-5">
-                <div class="container-lg flex flex-wrap items-center content-end">
-                    <span>
-                        <img src="../assets/icon/genshin_logo.png" class="rounded-lg md:w-24 w-20" alt="Genshin Impact Logo">
-                    </span>
-                    <div class="flex flex-wrap">
-                        <div class="w-auto md:p-2 sm:p-2 p-1">
-                            <h1 class="text-white md:text-5xl sm:text-4xl text-2xl font-bold md:ml-4 sm:ml-4">Genshin Impact</h1>
-                            <p class="text-sky-500 font-medium text-md py-1 px-1 md:ml-4 sm:ml-4">HoYoverse PTE. LTD.</p>
+        <div class="bg-local bg-center bg-no-repeat bg-cover flex flex-col justify-end" style="background-image: url(../assets/img/genshin_main_banner.png); height: 100vh;">
+            <div class="shadow-mask py-20 md:pl-20 pl-5 flex-1 flex items-end">
+        
+                <!-- Game Info -->
+                <div class="container-lg">
+                    <div class="flex items-center">
+                        <span>
+                            <img src="../assets/icon/genshin_logo.png" class="rounded-lg md:w-24 w-20" alt="Genshin Impact Logo">
+                        </span>
+                        <div class="flex flex-col">
+                            <div class="md:p-2 sm:p-2 p-1">
+                                <h1 class="text-white md:text-5xl sm:text-4xl text-2xl font-bold md:ml-4 sm:ml-4">Genshin Impact</h1>
+                                <p class="text-sky-500 font-medium text-md py-1 px-1 md:ml-4 sm:ml-4">HoYoverse PTE. LTD.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-full py-3">
+                    <div class="py-3">
                         <h1 class="text-white md:text-2xl sm:text-xl text-lg font-bold md:ml-4 sm:ml-4"><span class="md:text-3xl sm:text-2xl text-xl">★</span> 9 | <span class="px-2 md:font-regular font-thin rounded-md bg-gradient-to-r from-pink-500/50 to-violet-500/50">Adventure, Action RPG</span></h1>
                     </div>
-                    <div class="w-full py-2 flex gap-4">
+                    <div class="py-2 flex gap-4">
                         <a href="https://genshin.hoyoverse.com/id/">
                             <button class="py-2 px-3 text-white bg-blue-500 hover:bg-gray-900 rounded truncate shadow-transparent hover:shadow-lg hover:shadow-blue-500/50">Download Game</button>
                         </a>
-                        <span>
-                            <a href="#infoDetails">
-                                <button class="py-2 px-3 text-white bg-transparent backdrop-blur-lg ring-2 ring-blue-700 hover:ring-0 hover:bg-white hover:text-gray-900 hover:font-semibold rounded truncate">Detail Info</button>
-                            </a>
-                        </span>
+                        <a href="#infoDetails">
+                            <button class="py-2 px-3 text-white bg-transparent backdrop-blur-lg ring-2 ring-blue-700 hover:ring-0 hover:bg-white hover:text-gray-900 hover:font-semibold rounded truncate">Detail Info</button>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
 
     <section id="infoDetails">
