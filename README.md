@@ -30,6 +30,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Customizing login card background to blurred one | 11/6/2024 | Minor Update |
 |Add scrolling in game list | 11/6/2024 | Minor Update |
 |Add detailed game info page | 14/6/2024 | Major Update |
+|Add submit form page | 16/6/2024 | Major Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)

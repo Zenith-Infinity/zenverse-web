@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/subform.css">
+    <link rel="icon" href="../assets/icon/blue-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <nav class="nav-sticky py-3 navbar z-10 backdrop-blur-lg bg-black/60 flex items-center md:justify-between sm:justify-center justify-center p-2 w-full">
+        <a class="navbar-brand hidden md:block ml-5 grayscale" href="#">
+          <img src="../assets/icon/blue-logo.png" width="40" height="24">
+        </a>
+        <span class="flex gap-4 justify-center md:ml-auto md:pr-10 items-center">
+          <!-- Navbar button -->
+
+          <!-- Home button -->
+          <a href="main.html">
+              <button class="header-text border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#4DA6FF] hover:border-x-[#4DA6FF] transition px-2 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#4D4DFF]/50">
+                  <span>
+                    <img src="../assets/icon/ui/games-logo.png" class="nav-logo" alt="" width="11px">
+                  </span>&nbsp;GAMES
+              </button>
+          </a>
+
+          <!-- List games -->
+          <a href="../index.html">
+            <button class="header-text border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#4DA6FF] hover:border-x-[#4DA6FF] transition px-2 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#4D4DFF]/50">
+                <span>
+                  <img src="../assets/icon/ui/back-logo.png" class="nav-logo" alt="" width="11px">
+                </span>&nbsp;BACK
+            </button>
+          </a>
+        </span>
+    </nav>
+
+    <!-- Login section -->
+
+    <section id="submitForm">
+        <div class="bg-fixed bg-center bg-no-repeat bg-cover flex justify-center items-center" style="background-image: url('../assets/img/submit-bg.png'); height: 100vh;">
+            <div class="bg-zinc-900 border-2 border-sky-600 p-8 rounded-lg shadow-md md:w-1/2 w-80">
+                <img src="../assets/icon/blue-long-logo.png" class="w-48 mb-8 mx-auto" alt="">
+                <div id="formContainer" class="opacity-100">
+                    <form id="form" class="login-form">
+                        <div class="h-72 overflow-y-auto" id="formfield">
+                            <div class="md:flex xs:flex-col gap-4">
+                                <div class="mb-2 flex-grow">
+                                    <label for="gamename" class="block text-sm font-medium text-white">Name</label>
+                                    <input type="text" id="gamename" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm focus:font-semibold" placeholder="Add your game's name">
+                                </div>
+                                <div class="mb-2 flex-grow">
+                                    <label for="devname" class="block text-sm font-medium text-white">Developer</label>
+                                    <input type="text" id="devname" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Developed by?">
+                                </div>
+                            </div>
+                            <hr class="h-1 my-4">
+                            <div class="mb-2 flex-grow">
+                                <label for="genre" class="block text-sm font-medium text-white">Genre</label>
+                                <input type="text" id="genre" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Your game's genres">
+                            </div>
+                            <div class="mb-2 flex-grow">
+                                <label for="rating" class="block text-sm font-medium text-white">Rating</label>
+                                <input type="text" disabled id="rating" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Admin will change it depends to IGN or other rating, so don't worry">
+                            </div>
+                            <hr class="h-1 my-4">
+                            <div class="md:flex xs:flex-col gap-4">
+                                <div class="mb-2 flex-grow">
+                                    <label for="logo" class="block text-sm font-medium text-white">Game Logo</label>
+                                    <input type="text" id="logo" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Add link of your game logo">
+                                </div>
+                                <div class="mb-2 flex-grow">
+                                    <label for="banner" class="block text-sm font-medium text-white">Game Banner</label>
+                                    <input type="text" id="rating" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Add link of your game banner">
+                                </div>
+                            </div>
+                            <div class="mb-2 flex-grow">
+                                <label for="preview" class="block text-sm font-medium text-white">Game Preview</label>
+                                <input type="text" id="preview" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Add link for preview version/gameplay, must be embeded one">
+                            </div>
+                            <hr class="h-1 my-4">
+                            <div class="md:flex xs:flex-col gap-4">
+                                <div class="mb-2 flex-grow">
+                                    <label for="aboutgame" class="block text-sm font-medium text-white">About Your Game</label>
+                                    <input type="text" id="aboutgame" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Tell us about your game">
+                                </div>
+                                <div class="mb-2 flex-grow">
+                                    <label for="aboutdevs" class="block text-sm font-medium text-white">About Developer</label>
+                                    <input type="text" id="aboutdevs" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Tell us about the developer, just a bit">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-5 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+                    </form>
+                </div>
+                <p id="whatForm" class="mt-4 text-center text-sm text-gray-600">
+                    Your game will be appear soon after you submit it, <a href="main.html#gamelist" class="text-blue-500"">check here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
