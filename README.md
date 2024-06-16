@@ -11,7 +11,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |List game section | Done✅|
 |Login page | Done✅|
 |Detailed game info page | Done✅|
-|Publish game form menu | In development❗|
+|Publish game form menu | Done✅|
 |etc.| Still on planning |
 
 # Update
