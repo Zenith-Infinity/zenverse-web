@@ -2,6 +2,10 @@ body {
     font-family: "Poppins", serif;
 }
 
+#infoDetails::-webkit-scrollbar {
+    display: none;
+}
+
 div {
     display: block;
     unicode-bidi: isolate;

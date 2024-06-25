@@ -11,6 +11,6 @@ function fillTheList(value){
     fillGame.replace('<div class="ml-4 text-2xl text-white font-semibold truncate">Loading...</div>', '<div class="ml-4 text-2xl text-white text-hov font-semibold truncate">' + value.name + '</div>')
             .replace('<img src="../assets/icon/ui/Image_not_available.png" alt="" width="60" class="rounded-md">', '<img src="' + value.game_logo + '" alt="" width="60" class="rounded-md">')
             .replace('<div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url(https://ghpn.org/wp-content/uploads/No-Image-Placeholder-1024x576.jpg);">', '<div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url(' + value.game_banner + ');">')
-            .replace('<a href="#gamelist" class="animate-pulse pointer-events-none block backdrop-blur-xl transform transition duration-300 rounded-lg">', '<a href="' + value._id + '" class="block backdrop-blur-xl transform hover:scale-105 transition duration-300 rounded-lg">')
+            .replace('<a type="button" href="detailed.html?gameId=#guid" class="animate-pulse pointer-events-none block backdrop-blur-xl transform hover:scale-105 hover:backdrop-blur-none transition duration-300 rounded-lg">', '<a type="button" href="detailed.html?gameId=' + value._id + '" class="block backdrop-blur-xl transform hover:scale-105 hover:backdrop-blur-none transition duration-300 rounded-lg">')
         addInner("games", content);
 }

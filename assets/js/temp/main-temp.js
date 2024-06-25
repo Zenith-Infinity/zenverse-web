@@ -1,5 +1,5 @@
 export let fillGame = `
-    <a href="#gamelist" class="animate-pulse pointer-events-none block backdrop-blur-xl transform transition duration-300 rounded-lg">
+    <a type="button" href="detailed.html?gameId=#guid" class="animate-pulse pointer-events-none block backdrop-blur-xl transform hover:scale-105 hover:backdrop-blur-none transition duration-300 rounded-lg">
         <div class="border-3 p-3 rounded-lg shadow-lg">
         <div class="hidden md:block h-40 bg-cover bg-center rounded-lg" style="background-image: url(https://ghpn.org/wp-content/uploads/No-Image-Placeholder-1024x576.jpg);">
         </div>
