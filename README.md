@@ -12,6 +12,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Login page | Done✅|
 |Detailed game info page | Done✅|
 |Publish game form menu | Done✅|
+|Dashboard menu | Done✅|
 |etc.| Still on planning |
 
 # Update
@@ -34,6 +35,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Add games from API to main | 25/6/2024 | Major Update |
 |Add detailed info from API to page | 26/6/2024 | Major Update |
 |Add view info from API in selected banner | 26/6/2024 | Minor Update |
+|Add dashboard | 27/6/2024 | Major Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)
