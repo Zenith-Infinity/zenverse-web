@@ -8,7 +8,7 @@ export function fillGameList(results) {
     clearTotal()
     clearNotif()
     results.forEach(fillTheList);
-    results.slice().reverse().forEach(notifGame);
+    results.slice(-5).reverse().forEach(notifGame);
     fillTotal(results.length);
     console.log(results)
 }
