@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.status === 200) {
                     alert('Login successful');
-                    window.location.href = '/pages/admin/dashboard.html'; 
+                    window.location.href = 'admin/dashboard.html'; 
                 } else {
                     alert('Login failed: ' + data.message);
                 }
