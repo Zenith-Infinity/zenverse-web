@@ -36,6 +36,8 @@ This website is currently made by myself with reference from some hoyo websites.
 |Add detailed info from API to page | 26/6/2024 | Major Update |
 |Add view info from API in selected banner | 26/6/2024 | Minor Update |
 |Add dashboard | 27/6/2024 | Major Update |
+|Add CRUD function in dashboard | 27/6/2024 | Major Update |
+|Add notification update in dashboard | 27/6/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)
