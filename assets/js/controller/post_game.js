@@ -41,8 +41,8 @@ function pushData(){
             game_logo : getValue('logo')
         }
         postData(urlPOST, data, getResponse);
-        alert('Data successfully saved!')
         window.location.href = "dashboard.html";
+        alert('Data successfully saved!')
     }
 }
 
