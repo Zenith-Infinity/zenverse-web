@@ -2,9 +2,11 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, getResponse } from "../config/post_url.js";
 
-function pushData(){
+function pushData(event){
+    
+    event.preventDefault();
 
-    var requiredFields = ['gamename', 'devname', 'genre', 'rating', 'logo', 'banner', 'preview', 'gamelinks', 'aboutgame', 'aboutdevs'];
+    var requiredFields = ['gamename', 'devname', 'genre', 'logo', 'banner', 'preview', 'gamelinks', 'aboutgame', 'aboutdevs'];
     var valid = true;
 
     requiredFields.forEach(function(field) {
@@ -21,6 +23,7 @@ function pushData(){
 
     if (!valid) {
         alert('Please fill in all required fields.');
+        return;
     }
 
     if(valid){
@@ -28,7 +31,6 @@ function pushData(){
 
         let data = {
             name : getValue("gamename"),
-            rating : parseFloat(getValue("rating")),
             desc : getValue("aboutgame"),
             genre : genre.split(","),
             dev_name : {
@@ -42,7 +44,7 @@ function pushData(){
         }
         postData(urlPOST, data, getResponse);
         alert('Data successfully saved!')
-        window.location.href = "dashboard.html";
+        window.location.href = "main.html";
     }
 }
 
