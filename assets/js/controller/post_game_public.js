@@ -1,52 +1,46 @@
-import { postData } from "https://bukulapak.github.io/api/process.js";
-import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOST, getResponse } from "../config/post_url.js";
+import { postUrl } from "../config/post_url.js";
 
-function pushData(event){
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("gameForm");
 
-    event.preventDefault();
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    var requiredFields = ['gamename', 'devname', 'genre', 'logo', 'banner', 'preview', 'gamelinks', 'aboutgame', 'aboutdevs'];
-    var valid = true;
+        const formData = {
+            Name: document.getElementById("gamename").value,
+            Dev_name: {
+                Name: document.getElementById("devname").value,
+                Bio: document.getElementById("aboutdevs").value,
+            },
+            Genre: document.getElementById("genre").value.split(",").map(genre => genre.trim()),
+            Rating: 0,  // Disabled on the form, admin will update
+            Game_logo: document.getElementById("logo").value,
+            Game_banner: document.getElementById("banner").value,
+            Preview: document.getElementById("preview").value,
+            Link_games: document.getElementById("gamelinks").value,
+            Desc: document.getElementById("aboutgame").value,
+        };
 
-    requiredFields.forEach(function(field) {
-        var input = document.getElementById(field);
-        if (!input.value) {
-            valid = false;
-            input.classList.add('border-red-500');
-            input.classList.remove('border-gray-300');
-        } else {
-            input.classList.remove('border-red-500');
-            input.classList.add('border-gray-300');
+        try {
+            const response = await fetch(postUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                alert(result.message);
+                form.reset();
+                window.location.href = "main.html";
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.message}`);
+            }
+        } catch (error) {
+            alert(`Error: ${error.message}`);
         }
     });
-
-    if (!valid) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-
-    if(valid){
-        var genre = getValue("genre");
-
-        let data = {
-            name : getValue("gamename"),
-            rating : 1.0,
-            desc : getValue("aboutgame"),
-            genre : genre.split(","),
-            dev_name : {
-                name : getValue("devname"),
-                bio : getValue("aboutdevs"),
-            },
-            game_banner : getValue("banner"),
-            preview : getValue("preview"),
-            link_games : getValue("gamelinks"),
-            game_logo : getValue('logo')
-        }
-        postData(urlPOST, data, getResponse);
-        alert('Data successfully saved!')
-        window.location.href = "main.html";
-    }
-}
-
-onClick("button", pushData);
+});
