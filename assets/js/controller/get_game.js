@@ -36,6 +36,7 @@ function notifGame(value){
     let notifcontent =
     notifDisplay.replace('<img id="logoNotif" class="object-cover w-8 h-8 mx-1 rounded-full" src="https://avatarfiles.alphacoders.com/375/375160.jpeg" alt="game">', '<img class="object-cover w-8 h-8 mx-1 rounded-full" src="' + value.game_logo + '" alt="game">')
                 .replace('<span class="font-bold" id="gameNotif" href="#"></span><span class="font-semibold">No data added yet</span>', '<span class="font-bold" id="gameNotif" href="#">' + value.name + '</span><span class="font-semibold"> has been added.</span>')
+                .replace('<a href="#" id="gameId" class="flex items-center px-4 py-3 -mx-2 text-gray-700 hover:text-white hover:bg-blue-500">','<a href="../detailed.html?gameId=' + value._id + '" id="gameId" target="_blank" class="flex items-center px-4 py-3 -mx-2 text-gray-700 hover:text-white hover:bg-blue-500">')
         addInner("newNotif", notifcontent)
 }
 
