@@ -3,7 +3,7 @@ import { onClick, getValue } from "https://bukulapak.github.io/element/process.j
 import { urlPOST, getResponse } from "../config/post_url.js";
 
 function pushData(event){
-    
+
     event.preventDefault();
 
     var requiredFields = ['gamename', 'devname', 'genre', 'logo', 'banner', 'preview', 'gamelinks', 'aboutgame', 'aboutdevs'];
@@ -31,6 +31,7 @@ function pushData(event){
 
         let data = {
             name : getValue("gamename"),
+            rating : 1.0,
             desc : getValue("aboutgame"),
             genre : genre.split(","),
             dev_name : {
