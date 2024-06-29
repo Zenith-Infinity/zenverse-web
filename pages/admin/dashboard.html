@@ -57,6 +57,45 @@
                                     stroke-linejoin="round"></path>
                             </svg>
                         </button>
+
+                        <div x-data="{ dropdownOpen: false }" class="relative">
+                            <button @click="dropdownOpen = ! dropdownOpen"
+                                class="relative block ml-5 w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
+                                <img class="object-cover w-full h-full"
+                                    src="https://avatars.githubusercontent.com/u/60280111?v=4"
+                                    alt="Haris">
+                            </button>
+        
+                            <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 z-10 w-full h-full"
+                                style="display: none;"></div>
+        
+                            <div x-show="dropdownOpen"
+                                class="absolute left-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                                style="display: none;">
+                                <a href="https://github.com/hrisz"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                            </div>
+                        </div>
+
+                        <div x-data="{ dropdownOpen: false }" class="relative">
+                            <button @click="dropdownOpen = ! dropdownOpen"
+                                class="relative block ml-2 w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
+                                <img class="object-cover w-full h-full"
+                                    src="https://avatars.githubusercontent.com/u/114157212?v=4"
+                                    alt="Rayfan">
+                            </button>
+        
+                            <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 z-10 w-full h-full"
+                                style="display: none;"></div>
+        
+                            <div x-show="dropdownOpen"
+                                class="absolute left-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                                style="display: none;">
+                                <a href="https://github.com/rayfanaqbil"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                            </div>
+                        </div>
+                        
                     </div>
         
                     <div class="flex items-center">
@@ -88,40 +127,20 @@
                                 <button @click="dropdownOpen = ! dropdownOpen"
                                     class="relative block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
                                     <img class="object-cover w-full h-full"
-                                        src="https://avatars.githubusercontent.com/u/60280111?v=4"
-                                        alt="Haris">
+                                        src="../../assets/icon/blue-logo.png"
+                                        alt="admin">
                                 </button>
-            
+                        
                                 <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 z-10 w-full h-full"
                                     style="display: none;"></div>
-            
+                        
                                 <div x-show="dropdownOpen"
                                     class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
                                     style="display: none;">
-                                    <a href="https://github.com/hrisz"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                                    <button id="buttonLogout" onclick="logout()" class="block w-full px-4 py-2 text-sm text-gray-700 text-left hover:bg-indigo-600 hover:text-white">Logout</button>
                                 </div>
                             </div>
-
-                            <div x-data="{ dropdownOpen: false }" class="relative">
-                                <button @click="dropdownOpen = ! dropdownOpen"
-                                    class="relative block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
-                                    <img class="object-cover w-full h-full"
-                                        src="https://avatars.githubusercontent.com/u/114157212?v=4"
-                                        alt="Rayfan">
-                                </button>
-            
-                                <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 z-10 w-full h-full"
-                                    style="display: none;"></div>
-            
-                                <div x-show="dropdownOpen"
-                                    class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
-                                    style="display: none;">
-                                    <a href="https://github.com/rayfanaqbil"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                        
                     </div>
                 </header>
                 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
