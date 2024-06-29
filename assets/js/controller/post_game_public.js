@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 Bio: document.getElementById("aboutdevs").value,
             },
             Genre: document.getElementById("genre").value.split(",").map(genre => genre.trim()),
-            Rating: 0,  // Disabled on the form, admin will update
+            Rating: 0,
             Game_logo: document.getElementById("logo").value,
             Game_banner: document.getElementById("banner").value,
             Preview: document.getElementById("preview").value,
