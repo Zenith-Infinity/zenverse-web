@@ -1,6 +1,6 @@
 import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOST, getResponse } from "../config/post_url.js";
+import { postUrl } from "../config/post_url.js";
 
 function pushData(){
 
@@ -40,7 +40,7 @@ function pushData(){
             link_games : getValue("gamelinks"),
             game_logo : getValue('logo')
         }
-        postData(urlPOST, data, getResponse);
+        postData(postUrl, data);
         window.location.href = "dashboard.html";
         alert('Data successfully saved!')
     }
