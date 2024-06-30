@@ -40,6 +40,7 @@ This website is currently made by myself with reference from some hoyo websites.
 |Add notification update in dashboard | 27/6/2024 | Minor Update |
 |Move validation to backend | 29/6/2024 | Minor Update |
 |Locate detail page of game from notification | 29/6/2024 | Minor Update |
+|Set title of detail according to the game name | 1/7/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)

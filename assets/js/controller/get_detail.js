@@ -1,12 +1,14 @@
 import { setInner } from "https://bukulapak.github.io/element/process.js";
-import { fillDetailed } from "../temp/detailed-temp.js";
+import { fillDetailed, pageTitle } from "../temp/detailed-temp.js";
 
 export function fillDetailGame(result) {
     console.log(result);
 
     if (Array.isArray(result)) {
+        result.forEach(fillPageTitle);
         result.forEach(fillAllDetail);
     } else {
+        fillPageTitle(result);
         fillAllDetail(result);
     }
 }
@@ -28,6 +30,12 @@ function fillAllDetail(value) {
               .replace('<span id="bioDesc">Developer bio should be here</span>', '<span id="bioDesc">' + value.dev_name.bio + '</span>');
 
     setInner("detailGame", content);
+}
+
+function fillPageTitle(value) {
+    let titlecon =
+    pageTitle.replace('<title id="detailTitle">Game Detail | Zenverse</title>', value.name + ' | Zenverse')
+    setInner("detailTitle", titlecon)
 }
 
 export function get(target_url, responseFunction) {

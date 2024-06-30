@@ -58,3 +58,6 @@ export let fillDetailed =
             </div>
         </div>
     </section>`;
+
+export let pageTitle = `
+<title id="detailTitle">Game Detail | Zenverse</title>`
