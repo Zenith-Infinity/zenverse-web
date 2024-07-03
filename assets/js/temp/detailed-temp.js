@@ -18,7 +18,7 @@ export let fillDetailed =
                         </div>
                     </div>
                     <div class="py-3">
-                        <h1 class="text-white md:text-2xl sm:text-xl text-lg font-bold md:ml-4 sm:ml-4"><span class="md:text-3xl sm:text-2xl text-xl">★</span> <span id="gameRate">No Rating</span> | <span id="gameGenre" class="px-2 md:font-regular font-thin rounded-md bg-gradient-to-r from-pink-500/50 to-violet-500/50">Genre Unavailable</span></h1>
+                        <h1 class="text-white md:text-2xl sm:text-xl text-lg font-bold md:ml-4 sm:ml-4"><span class="md:text-3xl sm:text-2xl text-xl"><span class="text-yellow-500">★</span></span> <span id="gameRate">No Rating</span> | <span id="gameGenre" class="px-2 md:font-regular font-thin rounded-md bg-gradient-to-r from-pink-500/50 to-violet-500/50">Genre Unavailable</span></h1>
                     </div>
                     <div class="py-2 flex gap-4">
                         <a id="gameLink" href="#gameDetails">
@@ -51,7 +51,7 @@ export let fillDetailed =
                     <p class="md:pl-5 text-center flex text-md md:justify-start justify-center items-center md:text-4xl text-2xl font-semibold border-4 border-transparent md:border-l-white md:border-r-transparent border-x-white bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">Developer</p>
                     <div class="w-full pt-6">
                         <p class="md:pl-5 overflow-y-auto max-h-32 md:pr-20 text-white text-left text-pretty">
-                            This game is made by <span id="devDesc" class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Anon Devs</span> with rating ★<span id="rateDesc">N/A</span> from IGN, genre of this game are about <span id="genreDesc">.....</span>. <span id="bioDesc">Developer bio should be here</span>
+                            This game is made by <span id="devDesc" class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Anon Devs</span> with rating <span class="text-yellow-500">★</span><span id="rateDesc">N/A</span> from IGN, genre of this game are about <span id="genreDesc">.....</span>. <span id="bioDesc">Developer bio should be here</span>
                         </p>
                     </div>
                 </div>
