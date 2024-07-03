@@ -1,33 +1,32 @@
-import { urlLogin } from '../config/login_url.js';
+async function login(username, password) {
+    try {
+        const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ User_name: username, Password: password })
+        });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form');
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+        const data = await response.json();
 
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        try {
-            const response = await fetch(urlLogin, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ User_name: username, Password: password }),
-            });
-
-            const result = await response.json();
-            if (response.ok) {
-                alert('Login successful');
-                localStorage.setItem('jwt_token', result.token);
-                window.location.href = 'admin/dashboard.html';
-            } else {
-                alert(`Login failed: ${result.message}`);
-            }
-        } catch (error) {
-            console.error('Error during login:', error);
-            alert('An error occurred. Please try again.');
+        if (response.status === 200) {
+            localStorage.setItem('token', data.token);
+            alert('Login successful');
+            window.location.href = 'admin/dashboard.html';
+        } else {
+            alert(data.message);
         }
-    });
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Login failed');
+    }
+}
+
+
+document.getElementById('form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    login(username, password);
 });

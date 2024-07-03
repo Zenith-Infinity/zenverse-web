@@ -21,3 +21,4 @@ function deleteData(gameDelete) {
         })
         .catch(error => console.log('Error:', error));
 }
+
