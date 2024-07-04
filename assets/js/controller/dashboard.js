@@ -18,7 +18,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = await response.json();
 
         if (response.status === 200) {
-            alert('Dashboard access successful\nMessage: ' + data.message + '\nAdmin id: ' + data.admin_id);
+            if (!localStorage.getItem('alertShown')) {
+                alert('Dashboard access successful\nMessage: ' + data.message + '\nAdmin id: ' + data.admin_id);
+                localStorage.setItem('alertShown', 'true');
+            }
         } else {
             alert('Unauthorized access\nMessage: ' + data.message);
             window.location.href = '../submenu.html';

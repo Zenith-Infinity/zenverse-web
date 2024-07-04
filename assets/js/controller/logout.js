@@ -18,6 +18,7 @@ async function logout() {
 
         if (response.status === 200) {
             localStorage.removeItem('token');
+            localStorage.removeItem('alertShown');
             alert('Logout successful');
             window.location.href = '../signmenu.html';
         } else {
