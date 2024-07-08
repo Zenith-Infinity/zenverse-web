@@ -4,6 +4,10 @@ $(document).ready(function () {
 
         var gameName = $('#default-search').val().trim();
 
+        if (gameName === '') {
+            gameName = null;
+        }
+
         $.ajax({
             url: 'https://zenversegames-ba223a40f69e.herokuapp.com/games/search',
             type: 'GET',
