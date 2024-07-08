@@ -1,7 +1,13 @@
 # Game Distribution Example Web Project
-I create this for upcoming project, built with tailwind css & a bit bootstrap. This website is still on development so many things i have to do to perfect it. I will make a list for major update and some update to fix bug or or tidy up some elements on the website.
+I create this for final exam project, built with tailwind css & a bit bootstrap. This website is still on development so many things i have to do to perfect it. I will make a list for major update and some update to fix bug or or tidy up some elements on the website.
 
-This website is currently made by myself with reference from some hoyo websites. all copyrights owned by HoYoverse as an original devs.
+This website is currently made by myself with reference from some hoyo websites. All copyrights referred to each developer in game list.
+
+Project Started: Sunday, May 19th 2024.
+Project Finished: Tuesday, July 9th 2024. (7 weeks, 2 days)
+
+Front-end devs & project lead: Haris (https://github.com/hrisz)
+API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
 
 # Major Planning
 |Plans|Status|
@@ -13,7 +19,6 @@ This website is currently made by myself with reference from some hoyo websites.
 |Detailed game info page | Done✅|
 |Publish game form menu | Done✅|
 |Dashboard menu | Done✅|
-|etc.| Still on planning |
 
 # Update
 |Description|Date|Status|
