@@ -3,10 +3,10 @@ I create this for final exam project, built with tailwind css & a bit bootstrap.
 
 This website is currently made by myself with reference from some hoyo websites. All copyrights referred to each developer in game list.
 
-Project Started: Sunday, May 19th 2024.
+Project Started: Sunday, May 19th 2024.<br />
 Project Finished: Tuesday, July 9th 2024. (7 weeks, 2 days)
 
-Front-end devs & project lead: Haris (https://github.com/hrisz)
+Front-end devs & project lead: Haris (https://github.com/hrisz)<br />
 API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
 
 # Major Planning
