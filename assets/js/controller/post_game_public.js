@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        const captchaResp = grecaptcha.getResponse();
+
+        if (!captchaResp) {
+            alert("Please verify the captcha first!");
+            return;
+        }
+
         const formData = {
             Name: document.getElementById("gamename").value,
             Dev_name: {
@@ -30,12 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(formData),
             });
 
-            if (response.ok) {
+            if (response.ok && captchaResp) {
                 const result = await response.json();
                 alert(result.message);
                 form.reset();
                 window.location.href = "main.html";
-            } else {
+            }else if (!captchaResp.length > 0) {
+                alert("Verified captcha first!");
+            }
+            else {
                 const errorData = await response.json();
                 alert(`Error: ${errorData.message}`);
             }

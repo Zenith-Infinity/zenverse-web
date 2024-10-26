@@ -7,6 +7,9 @@ export function fillGameList(results) {
 }
 
 function fillTheList(value){
+
+    if (value.rating === 1) return;
+    
     let content = 
     fillGame.replace('<div class="hidden lg:block md:block sm:block ml-4 text-2xl text-white font-semibold">Loading...</div>', '<div class="ml-4 text-2xl text-white text-hov font-semibold truncate">' + value.name + '</div>')
             .replace('<div class="hidden lg:block md:block sm:block ml-4 text-md text-white font-semibold">No Rating</div>','<div class="hidden lg:block md:block sm:block ml-4 text-md text-white font-semibold"><span class="text-yellow-500">★</span> ' + value.rating + '</div>')
