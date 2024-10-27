@@ -34,12 +34,7 @@ function deleteData(gameDelete) {
     fetch(target_url, requestOptions)
         .then(response => response.json())
         .then(result => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Deleted!',
-                text: result.message,
-                confirmButtonText: 'OK'
-            });
+            console.log(result);
             location.reload();
         })
         .catch(error => {

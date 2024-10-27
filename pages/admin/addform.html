@@ -6,6 +6,9 @@
     <title>Add Data | Zenverse</title>
     <link rel="icon" href="../../assets/icon/blue-logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../../assets/js/controller/post_game.js"></script>
+    <script type="module" src="../../assets/js/admin_form.js"></script>
+    <script type="module" src="../../assets/js/controller/dashboard.js"></script>
 </head>
 <body>
     <div>
@@ -146,7 +149,7 @@
                                             <input required type="text" id="preview" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Add link for preview version/gameplay, must be embeded one">
                                         </div>
                                         <div class="mb-2 flex-grow">
-                                            <label for="links" class="block text-sm font-medium text-gray-700">Game Link</label>
+                                            <label for="gamelinks" class="block text-sm font-medium text-gray-700">Game Link</label>
                                             <input required type="text" id="gamelinks" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Add link for official game web/store">
                                         </div>
                                         <div class="md:flex xs:flex-col gap-4">
@@ -160,13 +163,12 @@
                                             </div>
                                         </div>
                                         <div class="flex items-center justify-end gap-3">
-                                            <button id="submitButton" class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                            <button id="submitButton" class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                                 Save
                                             </button>
                                             <button id="cancelButton" class="bg-rose-500 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                                 Cancel
                                             </button>
-                                            </a>
                                         </div>
                                     </form>
                                 </div>
@@ -177,7 +179,5 @@
             </div>
         </div>
     </div>
-    <script type="module" src="../../assets/js/controller/post_game.js"></script>
-    <script type="module" src="../../assets/js/admin_form.js"></script>
 </body>
 </html>
