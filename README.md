@@ -19,6 +19,8 @@ API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
 |Detailed game info page | Done✅|
 |Publish game form menu | Done✅|
 |Dashboard menu | Done✅|
+|Captcha Verify | Done✅|
+|Google OAuth Login | Under Development |
 
 # Update
 |Description|Date|Status|
