@@ -46,4 +46,4 @@ function pushData(){
     }
 }
 
-onClick("button", pushData);
+onClick("submitButton", pushData);

@@ -2,6 +2,30 @@ import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPUT, getResponse} from "../config/put_url.js";
 
+import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
+import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
+
+addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
+
+async function update() {
+    Swal.fire({
+        title: "Confirm Update?",
+        text: "Make sure you update the right one so it won't take alot times to update again",
+        showDenyButton: true,
+        confirmButtonText: "Yes",
+        denyButtonText: `Nevermind`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+            pushData()
+        } else if (result.isDenied) {
+        //   Nothing happen
+        }
+      });
+}
+
+document.getElementById('button').addEventListener('click', () => {
+    update();
+});
 
 function pushData(){
 
@@ -21,7 +45,17 @@ function pushData(){
     });
 
     if (!valid) {
-        alert('Please fill in all required fields.');
+        Swal.fire({
+            icon: "warning",
+            title: "Cannot Update Data!",
+            text: "Fill all the form first before updating.",
+            timer: 2000,
+            backdrop: true,
+            customClass: {
+                container: 'backdrop-blur-md',
+            },
+            showConfirmButton: false
+        });
     }
 
     if (valid) {
@@ -41,17 +75,10 @@ function pushData(){
             link_games : getValue("gamelinks"),
             game_logo : getValue('logo')
         }
-        putData(urlPUT, data, getResponse);
-        alert('Data successfully edited!')
+        putData(urlPUT, data, function(response) {
+            getResponse(response);
+            localStorage.setItem('updateToast', 'true');
+            window.location.href = 'dashboard.html';
+        });
     }
 }
-
-onClick("button", pushData);
-
-function confirmCancel() {
-    if (confirm("Are you sure you want to cancel?")) {
-        window.location.href = "dashboard.html";
-    }
-}
-
-document.getElementById("cancel").addEventListener("click", confirmCancel);

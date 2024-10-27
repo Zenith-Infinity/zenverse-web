@@ -1,9 +1,25 @@
+import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
+import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
+
+addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
+
 document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-        alert('You need to log in first');
-        window.location.href = '../signmenu.html';
+        Swal.fire({
+            icon: "warning",
+            title: "Can't Access Dashboard",
+            text: "You need to login before accessing dashboard!",
+            timer: 2000,
+            customClass: {
+                container: 'backdrop-blur-md',
+            },
+            showConfirmButton: false
+          });
+          setTimeout(() => {
+            window.location.href = '../signmenu.html';
+          }, 2000);
         return;
     }
 
@@ -19,16 +35,154 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (response.status === 200) {
             if (!localStorage.getItem('alertShown')) {
-                alert('Dashboard access successful\nMessage: ' + data.message + '\nAdmin id: ' + data.admin_id);
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    backdrop: false,
+                    customClass: {
+                        container: 'no-blur-container',
+                    },
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "Anda telah masuk",
+                    text: data.message + " dengan ID Admin: " + data.admin_id,
+                });
                 localStorage.setItem('alertShown', 'true');
             }
         } else {
-            alert('Unauthorized access\nMessage: ' + data.message);
-            window.location.href = '../submenu.html';
+            Swal.fire({
+                icon: "error",
+                title: "Access Restricted",
+                text: data.message,
+                timer: 2000,
+                backdrop: true,
+                customClass: {
+                    container: 'backdrop-blur-md',
+                },
+                showConfirmButton: false
+            });
+            setTimeout(() => {
+                window.location.href = '../signmenu.html';
+            }, 2000);
         }
     } catch (error) {
-        console.error('Error:', error);
-        alert('Unauthorized access\nError: ' + error.message);
-        window.location.href = '../submenu.html';
+        Swal.fire({
+            icon: "error",
+            title: "Access Restricted",
+            text: data.message,
+            timer: 2000,
+            backdrop: true,
+            customClass: {
+                container: 'backdrop-blur-md',
+            },
+            showConfirmButton: false
+        });
+        setTimeout(() => {
+            window.location.href = '../signmenu.html';
+        }, 2000);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('cancelToast') === 'true') {
+
+      localStorage.removeItem('cancelToast');
+  
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+  
+      Toast.fire({
+        icon: "info",
+        title: "You canceled the action."
+      });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('updateToast') === 'true') {
+
+      localStorage.removeItem('updateToast');
+  
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+  
+      Toast.fire({
+        icon: "info",
+        title: "Successfuly update the data."
+      });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('submitToast') === 'true') {
+
+      localStorage.removeItem('submitToast');
+  
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+  
+      Toast.fire({
+        icon: "info",
+        title: "Successfuly submit the data."
+      });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('deleteToast') === 'true') {
+
+      localStorage.removeItem('deleteToast');
+  
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+  
+      Toast.fire({
+        icon: "info",
+        title: "Successfuly delete the data."
+      });
     }
 });
