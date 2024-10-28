@@ -160,10 +160,6 @@ body::-webkit-scrollbar-thumb:hover {
     position: sticky;
 }
 
-.text-hov:hover {
-    color: rgb(31, 31, 31);
-}
-
 #carouselExampleSlidesOnly .carousel-inner,
 #carouselExampleSlidesOnly .carousel-item,
 #carouselExampleSlidesOnly{
