@@ -55,7 +55,9 @@
                             <label for="password" class="block text-sm font-medium text-white">Password</label>
                             <input type="password" id="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="********">
                         </div>
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <div class="flex justify-center items-center overflow-x-hidden">
+                            <div class="g-signin2" id="signGoogle" data-onsuccess="onSignIn"></div>
+                        </div>
                         <button type="submit" id="submit" class="w-full bg-blue-500 text-white mt-5 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Login</button>
                     </form>
                 </div>
@@ -63,7 +65,8 @@
         </div>
     </section>
     <script src="../assets/js/controller/login.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script src="../assets/js/controller/gsi.js"></script>
+    <script src="../assets/js/login-controls.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@ window.confirmDelete = confirmDelete;
 
 function deleteData(gameDelete) {
     var gameId = gameDelete;
-    var target_url = "https://zenversegames-ba223a40f69e.herokuapp.com/delete/" + gameId;
+    var target_url = "https://asia-southeast2-backend-438507.cloudfunctions.net/parkirgratisbackend/data/tempat/" + gameId;
 
     var requestOptions = {
         method: 'DELETE',
