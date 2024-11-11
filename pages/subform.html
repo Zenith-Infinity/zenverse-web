@@ -9,6 +9,7 @@
     <link rel="icon" href="../assets/icon/blue-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <nav class="nav-sticky py-3 navbar z-10 backdrop-blur-lg bg-black/60 flex items-center md:justify-between sm:justify-center justify-center p-2 w-full">
@@ -39,13 +40,13 @@
     </nav>
 
     <section id="submitForm">
-        <div class="bg-fixed bg-center bg-no-repeat bg-cover flex justify-center items-center" style="background-image: url('../assets/img/submit-bg.png'); height: 100vh;">
-            <div class="bg-zinc-900 border-2 border-sky-600 p-8 rounded-lg shadow-md lg:w-1/3 md:w-1/2 w-80">
-                <img src="../assets/icon/blue-long-logo.png" class="w-48 mb-8 mx-auto" alt="">
+        <div class="bg-fixed bg-center bg-no-repeat bg-cover flex justify-center items-center" style="background-image: url('https://images7.alphacoders.com/130/1306926.jpeg'); height: 100vh;">
+            <div class="bg-zinc-900/50 backdrop-blur-md border-2 border-sky-600 p-6 sm:p-8 rounded-lg shadow-md w-full max-w-lg sm:max-w-md xs:max-w-xs xs:w-72 mx-4">
+                <img src="../assets/icon/blue-long-logo.png" class="w-36 sm:w-48 mb-6 sm:mb-8 mx-auto" alt="">
                 <div id="formContainer" class="opacity-100">
                     <form id="gameForm" class="form">
                         <div class="h-72 overflow-y-auto" id="formfield">
-                            <div class="md:flex xs:flex-col gap-4">
+                            <div class="flex flex-col md:flex-row gap-4">
                                 <div class="mb-2 flex-grow">
                                     <label for="gamename" class="block text-sm font-medium text-white">Name</label>
                                     <input type="text" id="gamename" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm focus:font-semibold" placeholder="Add your game's name">
@@ -86,20 +87,21 @@
                             <hr class="h-1 my-4">
                             <div class="md:flex xs:flex-col gap-4">
                                 <div class="mb-2 flex-grow">
-                                    <label for="aboutgame" class="block text-sm font-medium text-white">About Your Game</label>
+                                    <label for="aboutgame" class="block text-sm font-medium text-white">Game Description</label>
                                     <input type="text" id="aboutgame" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Tell us about your game">
                                 </div>
                                 <div class="mb-2 flex-grow">
-                                    <label for="aboutdevs" class="block text-sm font-medium text-white">About Developer</label>
+                                    <label for="aboutdevs" class="block text-sm font-medium text-white">Developer Description</label>
                                     <input type="text" id="aboutdevs" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm focus:font-semibold" placeholder="Tell us about the developer, just a bit">
                                 </div>
                             </div>
+                            <div class="g-recaptcha flex justify-center pt-2 w-full" data-sitekey="6LfaJ20qAAAAADa70T_7GD2dz_ZbC5CVbOi_jjao"></div>
                         </div>
                         <button id="button" class="mt-5 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" type="submit">Submit</button>
                     </form>
                 </div>
                 <p class="mt-4 text-center text-sm text-gray-600">
-                    Your game will be appear soon after you submit it, <a href="main.html#gamelist" class="text-blue-500"">check here</a>
+                    Your game will be appear soon after we review it, <a href="main.html#gamelist" class="text-blue-500"">check here</a>
                 </p>
             </div>
         </div>

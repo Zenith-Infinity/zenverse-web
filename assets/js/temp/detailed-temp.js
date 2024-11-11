@@ -33,8 +33,8 @@ export let fillDetailed =
         </div> 
     </section>
 
-    <section id="infoDetails">
-        <div class="container-lg md:pl-20 px-20 py-20 bg-zinc-900" style="height: 110vh;">
+    <section id="infoDetails" class="h-screen max-h-screen overflow-y-auto">
+        <div class="container-lg md:pl-20 px-20 py-20 bg-zinc-900 overflow-y-auto lg:h-[80vh] md:h-[70vh]" style="height: 110vh;">
             <p class="md:pl-5 text-center flex text-md md:justify-start justify-center items-center md:text-4xl text-2xl font-semibold border-4 border-transparent md:border-l-white md:border-r-transparent border-x-white bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">About Game</p>
             <div class="container max-w-screen py-5 md:px-5 sm:px-5">
                 <p id="gameDesc" class="overflow-y-auto max-h-60 md:pr-20 text-white text-left text-pretty">Description not available...</p>
@@ -51,7 +51,7 @@ export let fillDetailed =
                     <p class="md:pl-5 text-center flex text-md md:justify-start justify-center items-center md:text-4xl text-2xl font-semibold border-4 border-transparent md:border-l-white md:border-r-transparent border-x-white bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">Developer</p>
                     <div class="w-full pt-6">
                         <p class="md:pl-5 overflow-y-auto max-h-32 md:pr-20 text-white text-left text-pretty">
-                            This game is made by <span id="devDesc" class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Anon Devs</span> with rating <span class="text-yellow-500">★</span><span id="rateDesc">N/A</span> from IGN, genre of this game are about <span id="genreDesc">.....</span>. <span id="bioDesc">Developer bio should be here</span>
+                            This game is made by <span id="devDesc" class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Anon Devs</span> with rating ★<span id="rateDesc">N/A</span> from IGN, genre of this game are about <span id="genreDesc">.....</span>. <span id="bioDesc">Developer bio should be here</span>
                         </p>
                     </div>
                 </div>

@@ -19,6 +19,8 @@ API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
 |Detailed game info page | Done✅|
 |Publish game form menu | Done✅|
 |Dashboard menu | Done✅|
+|Captcha Verify | Done✅|
+|Google OAuth Login | Under Development |
 
 # Update
 |Description|Date|Status|
@@ -48,6 +50,9 @@ API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
 |Set title of detail according to the game name | 1/7/2024 | Minor Update |
 |Add rating to game list and change color of stars | 1/7/2024 | Minor Update |
 |Add search bar in dashboard menu | 8/7/2024 | Minor Update |
+|Add captcha verify for public form submit | 27/10/2024 | Major Update |
+|Customize alert design | 27/10/2024 | Minor Update |
+|Add pop up for about information | 27/10/2024 | Minor Update |
 
 # Preview
 [GitHub Pages](https://hrisz.github.io/zenverse_FE/)

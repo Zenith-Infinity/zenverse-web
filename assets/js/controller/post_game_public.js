@@ -1,10 +1,26 @@
 import { postUrl } from "../config/post_url.js";
 
+import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
+import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
+
+addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("gameForm");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+
+        const captchaResp = grecaptcha.getResponse();
+
+        if (!captchaResp) {
+            Swal.fire({
+                icon: "warning",
+                title: "Captcha Required",
+                text: "Please verify the captcha first!",
+            });
+            return;
+        }
 
         const formData = {
             Name: document.getElementById("gamename").value,
@@ -30,17 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(formData),
             });
 
-            if (response.ok) {
+            if (response.ok && captchaResp) {
                 const result = await response.json();
-                alert(result.message);
-                form.reset();
-                window.location.href = "main.html";
+                Swal.fire({
+                    icon: "success",
+                    title: "Success",
+                    text: result.message,
+                }).then(() => {
+                    form.reset();
+                    window.location.href = "main.html";
+                });
+            } else if (!captchaResp.length > 0) {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Verification Needed",
+                    text: "Please verify the captcha first!",
+                });
             } else {
                 const errorData = await response.json();
-                alert(`Error: ${errorData.message}`);
+                Swal.fire({
+                    icon: "error",
+                    title: "Submission Failed",
+                    text: `Error: ${errorData.message}`,
+                });
             }
         } catch (error) {
-            alert(`Error: ${error.message}`);
+            Swal.fire({
+                icon: "error",
+                title: "Network Error",
+                text: `Error: ${error.message}`,
+            });
         }
     });
 });

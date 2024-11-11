@@ -1,6 +1,31 @@
 import { postData } from "https://bukulapak.github.io/api/process.js";
-import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { postUrl } from "../config/post_url.js";
+import { getValue } from "https://bukulapak.github.io/element/process.js";
+import { postUrl, getResponse } from "../config/post_url.js";
+
+import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
+import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
+
+addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
+
+async function submit() {
+    Swal.fire({
+        title: "Confirm Submit?",
+        text: "Make sure you submit the right one so it won't take alot times to update again",
+        showDenyButton: true,
+        confirmButtonText: "Yes",
+        denyButtonText: `Nevermind`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+            pushData()
+        } else if (result.isDenied) {
+        //   Nothing happen
+        }
+      });
+}
+
+document.getElementById('submitButton').addEventListener('click', () => {
+    submit();
+});
 
 function pushData(){
 
@@ -20,7 +45,17 @@ function pushData(){
     });
 
     if (!valid) {
-        alert('Please fill in all required fields.');
+        Swal.fire({
+            icon: "warning",
+            title: "Cannot Submit Data!",
+            text: "Fill all the form first before submit.",
+            timer: 2000,
+            backdrop: true,
+            customClass: {
+                container: 'backdrop-blur-md',
+            },
+            showConfirmButton: false
+        });
     }
 
     if(valid){
@@ -40,10 +75,13 @@ function pushData(){
             link_games : getValue("gamelinks"),
             game_logo : getValue('logo')
         }
-        postData(postUrl, data);
-        window.location.href = "dashboard.html";
-        alert('Data successfully saved!')
+        postData(postUrl, data, function(response) {
+            getResponse(response);
+            localStorage.setItem('submitToast', 'true');
+
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 2000);
+        });
     }
 }
-
-onClick("button", pushData);

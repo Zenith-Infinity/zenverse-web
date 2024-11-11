@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Russo One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -18,12 +19,12 @@
     <nav class="h-full min-h-24 max-h-24 flex items-center md:justify-between sm:justify-center justify-center">
         <span class="flex gap-4 justify-center md:ml-auto md:pr-10 items-center">
             <!-- Navbar button -->
-            <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+            <button id="aboutButton" class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
                 <span>
                     <img src="assets/icon/ui/about-logo.png" class="nav-logo" alt="" width="11px">
                 </span>&nbsp;ABOUT
             </button>
-            <a href="pages/main.html#gamelist">
+            <a href="pages/main.html#gamelist" class="md:block sm:block hidden">
                 <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
                     <span>
                         <img src="assets/icon/ui/games-logo.png" class="nav-logo" alt="" width="11px">
@@ -51,7 +52,7 @@
         <!-- Background video -->
         <div class="home-bg">
             <video preload="auto" autoplay muted loop playsinline id="vid-kv">
-                <source src="assets/video/bg-landing.mp4" type="video/mp4" class="src-video">
+                <source src="assets/video/bg-landing-new.mp4" type="video/mp4" class="src-video">
             </video>
         </div>
         <!-- Looping effect in bottom screen -->
@@ -95,6 +96,7 @@
 
     </section>
 <script src="assets/js/main-scramble.js"></script>
+<script type="module" src="assets/js/index.js"></script>
 </body>
 
 </html>
