@@ -9,7 +9,7 @@ function handleCredentialResponse(response) {
 
   // Kirim token ke backend untuk verifikasi dan mendapatkan token JWT
   fetch("https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback", {
-      method: "POST",
+      method: "GET",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token: response.credential })
   })
