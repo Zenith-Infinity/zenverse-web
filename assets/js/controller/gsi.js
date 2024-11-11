@@ -1,7 +1,22 @@
 function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    window.location.href = "https://zenversegames-ba223a40f69e.herokuapp.com/auth/google";
   }
+
+  // Mendapatkan token dari URL atau melakukan request jika dibutuhkan
+fetch("https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback")
+.then(response => response.json())
+.then(data => {
+  if (data.token) {
+    // Simpan token di localStorage
+    localStorage.setItem("jwtToken", data.token);
+    alert("Login berhasil!");
+    // Arahkan ke halaman dashboard atau halaman admin
+    window.location.href = "admin/dashboard.html";
+  } else {
+    alert("Login gagal. Silakan coba lagi.");
+  }
+})
+.catch(error => {
+  console.error("Error:", error);
+  alert("Terjadi kesalahan. Silakan coba lagi.");
+});
