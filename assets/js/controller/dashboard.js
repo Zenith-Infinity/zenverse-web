@@ -4,7 +4,19 @@ import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
 addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const token = localStorage.getItem('token');
+    // Cek token di localStorage atau query string
+    let token = localStorage.getItem('token');
+    if (!token) {
+        // Ambil token dari query string setelah login Google OAuth
+        const urlParams = new URLSearchParams(window.location.search);
+        token = urlParams.get('token');
+        if (token) {
+            // Simpan token dari Google OAuth di localStorage
+            localStorage.setItem('token', token);
+            // Bersihkan token dari URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
 
     if (!token) {
         Swal.fire({
@@ -16,21 +28,21 @@ document.addEventListener('DOMContentLoaded', async () => {
                 container: 'backdrop-blur-md',
             },
             showConfirmButton: false
-          });
-          setTimeout(() => {
+        });
+        setTimeout(() => {
             window.location.href = '../signmenu.html';
-          }, 2000);
+        }, 2000);
         return;
     }
 
     try {
+        // Kirim permintaan ke backend menggunakan token
         const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/dashboard', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         });
-
         const data = await response.json();
 
         if (response.status === 200) {
@@ -46,14 +58,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                         container: 'no-blur-container',
                     },
                     didOpen: (toast) => {
-                      toast.onmouseenter = Swal.stopTimer;
-                      toast.onmouseleave = Swal.resumeTimer;
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
                     }
                 });
                 Toast.fire({
                     icon: "success",
                     title: "Anda telah masuk",
-                    text: data.message + " dengan ID Admin: " + data.admin_id,
+                    text: data.message,
                 });
                 localStorage.setItem('alertShown', 'true');
             }
@@ -77,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         Swal.fire({
             icon: "error",
             title: "Access Restricted",
-            text: data.message,
+            text: "Unable to access the dashboard due to an error.",
             timer: 2000,
             backdrop: true,
             customClass: {
@@ -90,6 +102,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, 2000);
     }
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('cancelToast') === 'true') {
