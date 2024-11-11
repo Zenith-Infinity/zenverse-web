@@ -16,23 +16,23 @@
 
 <body>
     <!-- Navigation bar -->
-    <nav class="h-full min-h-24 max-h-24 flex items-center md:justify-between sm:justify-center justify-center">
+    <nav class="fixed top-0 z-10 flex items-center md:justify-between sm:justify-end justify-center p-2 w-full h-20">
         <span class="flex gap-4 justify-center md:ml-auto md:pr-10 items-center">
             <!-- Navbar button -->
-            <button id="aboutButton" class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+            <button id="aboutButton" class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-sky-500 hover:border-x-sky-500 transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-sky-500/50">
                 <span>
                     <img src="assets/icon/ui/about-logo.png" class="nav-logo" alt="" width="11px">
                 </span>&nbsp;ABOUT
             </button>
             <a href="pages/main.html#gamelist" class="md:block sm:block hidden">
-                <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-sky-500 hover:border-x-sky-500 transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-sky-500/50">
                     <span>
                         <img src="assets/icon/ui/games-logo.png" class="nav-logo" alt="" width="11px">
                     </span>&nbsp;GAMES
                 </button>
             </a>
             <a href="pages/signmenu.html">
-                <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#d8b57c] hover:border-x-[#d8b57c] transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#d8b57c]/50">
+                <button class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-sky-500 hover:border-x-sky-500 transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-sky-500/50">
                     <span>
                         <img src="assets/icon/ui/sign-logo.png" class="nav-logo" alt="" width="11px">
                     </span>&nbsp;SIGNIN
@@ -47,12 +47,12 @@
     <div class="mask-bg"></div>
     
     <!-- Home section -->
-    <section id="home">
+    <section id="home" class="h-[100vh] flex items-center justify-center">
 
         <!-- Background video -->
-        <div class="home-bg">
+        <div class="home-bg brightness-75">
             <video preload="auto" autoplay muted loop playsinline id="vid-kv">
-                <source src="assets/video/bg-landing-new.mp4" type="video/mp4" class="src-video">
+                <source src="assets/video/bg-landings.mp4" type="video/mp4" class="src-video">
             </video>
         </div>
         <!-- Looping effect in bottom screen -->
@@ -63,37 +63,70 @@
         </div>
 
         <!-- Middle content -->
-        <div class="md:container-lg md:mx-auto px-8 h-64 grid grid-rows-3 gap-4 justify-center items-center subcontainer-home">
+        <div class="h-auto md:container-lg md:mx-auto px-8 grid justify-center items-center pt-20">
 
             <!-- Slogan text -->
             <p class="text-white text-center text-3xl xs:text-3xl sm:text-4xl md:text-5xl font-medium drop-shadow-2xl mainmenu-text textfx">Journey Beyond The Horizon</p>
-            <div class="z-10 flex flex-col items-center posbot">
-                <hr class="w-64 h-1 md:h-1 sm:h-1 xs:h-1 my-4 bg-white border-0 rounded">
+            <div class="z-10 flex flex-col items-center">
+                <hr class="w-64 h-1 md:h-1 sm:h-1 xs:h-1 my-4 bg-gradient-to-r from-sky-300 via-white to-purple-300 border-0 rounded">
                 <span class="flex justify-center gap-4 py-2">
                     <!-- Create Account middle button -->
                      <a href="pages/subform.html">
-                        <button class="create-acc md:px-4 md:py-1 text-white border-2 border-white rounded-lg shadow-transparent bg-[#d8b57c]/50 px-4 py-1 hover:bg-[#6c5531]/50 hover:shadow-lg hover:shadow-[#d8b57c]/50 truncate">
+                        <button class="create-acc md:px-4 md:py-1 text-white border-2 border-white rounded-lg shadow-transparent bg-gradient-to-r from-sky-300/50 to-purple-300/50 px-4 py-1 hover:bg-black/50 hover:shadow-lg hover:shadow-sky-300/50 truncate">
                             SUBMIT YOUR GAME
                         </button>
                      </a>
                     <!-- List Game middle button -->
                     <a href="pages/main.html">
-                        <button class="create-acc md:px-4 md:py-1 text-white border-2 border-white rounded-lg shadow-transparent bg-black/50 px-4 py-1 hover:bg-[#6c5531]/50 hover:shadow-lg hover:shadow-[#d8b57c]/50 truncate">
+                        <button class="create-acc md:px-4 md:py-1 text-white border-2 border-white rounded-lg shadow-transparent bg-black/50 px-4 py-1 bg-gradient-to-r hover:from-sky-300/40 hover:to-purple-300/40 hover:shadow-lg hover:shadow-sky-300/50 truncate">
                             MAIN MENU
                         </button>
                     </a>
                 </span>
-
+                
             <!-- Home description -->
                 <p class="text-white md:text-sm text-xs text-center font-medium drop-shadow-2x py-3 mainmenu-subtext">
                     a digital distribution platform dedicated to provide immersive worlds<br>and unforgettable experiences.
                 </p>
+                <div class="flex gap-4 pt-2">
+                    <!-- <a href="signmenu.html">
+                        <button class="group rounded-md border-2 border-transparent bg-white/70 hover:bg-slate-800/70 backdrop-blur-md shadow-transparent hover:border-[#4DA6FF] transition px-3 py-2 text-white text-sm flex items-center ml-auto hover:shadow-xl hover:shadow-[#4D4DFF]/50">
+                            <span>
+                                <img src="https://avatars.githubusercontent.com/u/60280111?v=4" class="navprofile rounded-full" alt="" width="30px">
+                            </span>
+                            <div class="flex flex-wrap -m-2">
+                                <div class="w-auto p-2">
+                                    <h2 class="text-sm font-bold group-hover:text-white text-gray-500 text-left px-2">Haris</h1>
+                                    <p class="text-sm font-semibold text-left text-sky-500 px-2">Front-end Devs</p>
+                                </div>
+                            </div>
+                        </button>
+                    </a> -->
+                    <div class="w-32 invert flex justify-center items-center">
+                        <img src="https://www.pngplay.com/wp-content/uploads/12/GitHub-PNG-HD-Photos.png" alt="">
+                    </div>
+                    <div class="flex justify-center items-center bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-purple-300">
+                        ✦
+                    </div>
+                    <div class="w-32 brightness-0 invert flex justify-center items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/2560px-Heroku_logo.svg.png" alt="">
+                    </div>
+                    <!-- <a href="signmenu.html">
+                        <button class="group rounded-md border-2 border-transparent bg-white/70 hover:bg-slate-800/70 hover:bg-slate-800 shadow-transparent hover:border-[#4DA6FF] transition px-3 py-2 text-white text-sm flex items-center ml-auto hover:shadow-xl hover:shadow-[#4D4DFF]/50">
+                            <span>
+                                <img src="https://avatars.githubusercontent.com/u/114157212?v=4" class="navprofile rounded-full" alt="" width="30px">
+                            </span>
+                            <div class="flex flex-wrap -m-2">
+                                <div class="w-auto p-2">
+                                    <h2 class="text-sm font-bold group-hover:text-white text-gray-500 text-left px-2">Rayfan</h1>
+                                    <p class="text-sm font-semibold text-left text-sky-500 px-2">Back-end Devs</p>
+                                </div>
+                            </div>
+                        </button>
+                    </a> -->
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="about">
-
     </section>
 <script src="assets/js/main-scramble.js"></script>
 <script type="module" src="assets/js/index.js"></script>
