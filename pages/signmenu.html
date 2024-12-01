@@ -18,8 +18,6 @@
         </a>
         <span class="flex gap-4 justify-center md:ml-auto md:pr-10 items-center">
           <!-- Navbar button -->
-
-          <!-- Home button -->
           <a href="main.html">
               <button class="header-text border-2 border-transparent border-b-white shadow-transparent hover:border-b-[#4DA6FF] hover:border-x-[#4DA6FF] transition px-2 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-[#4D4DFF]/50">
                   <span>
@@ -40,11 +38,11 @@
     </nav>
 
     <!-- Login section -->
-
     <section id="loginWindow">
         <div class="positioning bg-fixed bg-center bg-no-repeat bg-cover flex justify-center items-center" style="background-image: url('../assets/img/img_bg_glxy.jpg'); height: 100vh;">
             <div class="backdrop-blur-md border-2 border-sky-600 p-8 rounded-lg shadow-md md:w-96 w-80">
                 <img src="../assets/icon/blue-long-logo.png" class="w-48 mb-8 mx-auto" alt="">
+
                 <div id="formContainer" class="transition-opacity opacity-100">
                     <form id="form" class="login-form">
                         <div class="mb-4">
@@ -60,7 +58,6 @@
                                  data-client_id="161294722609-k3mgi3nbmb9ulrpd8hdd3da3rj05l3jg.apps.googleusercontent.com"
                                  data-context="signin"
                                  data-ux_mode="popup"
-                                 data-callback="handleCredentialResponse"
                                  data-auto_prompt="false">
                             </div>
                             <div class="g_id_signin"
@@ -78,8 +75,8 @@
             </div>
         </div>
     </section>
+
     <script type="module" src="../assets/js/controller/login.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script type="module" src="../assets/js/controller/gsi.js"></script>
 </body>
 </html>
