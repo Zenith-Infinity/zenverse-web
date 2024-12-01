@@ -3,9 +3,6 @@ import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js
 
 addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
-const GOOGLE_CLIENT_ID = "161294722609-k3mgi3nbmb9ulrpd8hdd3da3rj05l3jg.apps.googleusercontent.com";
-const REDIRECT_URI = "https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback";
-
 // Fungsi login dengan username dan password
 async function login(username, password) {
     try {
@@ -20,11 +17,11 @@ async function login(username, password) {
         const data = await response.json();
 
         if (response.status === 200) {
-            localStorage.setItem('token', data.token);
+            localStorage.setItem('token', data.token); // Simpan token
             Swal.fire({
                 icon: "success",
                 title: "Login Successful",
-                text: "You will be directed to dashboard",
+                text: "Redirecting to dashboard...",
                 timer: 2000,
                 showConfirmButton: false
             });
@@ -35,7 +32,7 @@ async function login(username, password) {
             Swal.fire({
                 icon: "error",
                 title: "Login Failed",
-                text: "Username atau password salah!",
+                text: data.message || "Username or password incorrect!",
             });
         }
     } catch (error) {
@@ -43,43 +40,39 @@ async function login(username, password) {
         Swal.fire({
             icon: "warning",
             title: "Login Failed",
-            text: "Terjadi kesalahan saat login.",
+            text: "An error occurred during login.",
         });
     }
 }
 
-// Fungsi untuk login dengan Google OAuth
-function googleLogin() {
-    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=openid%20profile%20email`;
-    window.location.href = googleAuthUrl;
-}
-
-// Fungsi untuk menangani token Google yang diterima
-async function handleCredentialResponse(response) {
-    const token = response.credential;
+// Fungsi login dengan Google OAuth
+async function googleLogin() {
     try {
-        const res = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ token: token }),
-        });
+        const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/auth/google');
+        const data = await response.json();
 
-        const data = await res.json();
+        if (data.status === 200) {
+            localStorage.setItem("token", data.token); // Simpan token JWT
 
-        if (res.ok) {
-            localStorage.setItem('token', data.token);
+            // Validasi URL redirect
+            if (!["https://hrisz.github.io/zenverse_FE/pages/admin/dashboard.html"].includes(data.redirect)) {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Invalid Redirect",
+                    text: "Unauthorized redirect URL detected.",
+                });
+                return;
+            }
+
             Swal.fire({
                 icon: "success",
                 title: "Login Successful",
-                text: "You will be directed to the dashboard.",
+                text: "Redirecting to dashboard...",
                 timer: 2000,
                 showConfirmButton: false
             });
             setTimeout(() => {
-                // Redirect ke URL yang dikembalikan dari back-end
-                window.location.href = data.redirect || 'admin/dashboard.html';
+                window.location.href = data.redirect; // Redirect ke dashboard
             }, 2000);
         } else {
             Swal.fire({
@@ -89,7 +82,7 @@ async function handleCredentialResponse(response) {
             });
         }
     } catch (error) {
-        console.error("Error during Google login:", error);
+        console.error("Error:", error);
         Swal.fire({
             icon: "error",
             title: "Error",
@@ -98,7 +91,7 @@ async function handleCredentialResponse(response) {
     }
 }
 
-// Fungsi untuk menangani callback dari Google OAuth
+// Fungsi menangani callback Google OAuth
 async function handleGoogleCallback() {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
@@ -115,26 +108,37 @@ async function handleGoogleCallback() {
 
     if (code) {
         try {
-            const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback?code=' + code);
+            const response = await fetch(`https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback?code=${code}`);
             const data = await response.json();
 
             if (response.status === 200) {
                 localStorage.setItem('token', data.token);
+
+                // Validasi URL redirect
+                if (!["https://hrisz.github.io/zenverse_FE/pages/admin/dashboard.html"].includes(data.redirect)) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Invalid Redirect",
+                        text: "Unauthorized redirect URL detected.",
+                    });
+                    return;
+                }
+
                 Swal.fire({
                     icon: "success",
                     title: "Login Successful",
-                    text: "You will be directed to the dashboard.",
+                    text: "Redirecting to dashboard...",
                     timer: 2000,
                     showConfirmButton: false
                 });
                 setTimeout(() => {
-                    window.location.href = data.redirect || 'admin/dashboard.html';
+                    window.location.href = data.redirect;
                 }, 2000);
             } else {
                 Swal.fire({
                     icon: "error",
                     title: "Login Failed",
-                    text: data.message || "Google login failed!",
+                    text: data.message || "Google callback failed!",
                 });
             }
         } catch (error) {
@@ -161,13 +165,5 @@ window.onload = () => {
     // Tangani callback dari Google OAuth
     if (window.location.search.includes("code")) {
         handleGoogleCallback();
-    } else {
-        // Inisialisasi Google Sign-In
-        google.accounts.id.initialize({
-            client_id: GOOGLE_CLIENT_ID,
-            callback: handleCredentialResponse,
-        });
-
-        google.accounts.id.prompt(); // Optional: Show the prompt if needed
     }
 };
