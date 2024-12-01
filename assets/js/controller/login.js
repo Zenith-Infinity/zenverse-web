@@ -3,8 +3,8 @@ import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js
 
 addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
-const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID";
-const REDIRECT_URI = "https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback"; // Ubah sesuai dengan URI pengalihan Anda
+const GOOGLE_CLIENT_ID = "161294722609-k3mgi3nbmb9ulrpd8hdd3da3rj05l3jg.apps.googleusercontent.com";
+const REDIRECT_URI = "https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback";
 
 // Fungsi login dengan username dan password
 async function login(username, password) {
@@ -98,6 +98,56 @@ async function handleCredentialResponse(response) {
     }
 }
 
+// Fungsi untuk menangani callback dari Google OAuth
+async function handleGoogleCallback() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    const error = urlParams.get('error');
+
+    if (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: "Error: " + error,
+        });
+        return;
+    }
+
+    if (code) {
+        try {
+            const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback?code=' + code);
+            const data = await response.json();
+
+            if (response.status === 200) {
+                localStorage.setItem('token', data.token);
+                Swal.fire({
+                    icon: "success",
+                    title: "Login Successful",
+                    text: "You will be directed to the dashboard.",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+                setTimeout(() => {
+                    window.location.href = data.redirect || 'admin/dashboard.html';
+                }, 2000);
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Login Failed",
+                    text: data.message || "Google login failed!",
+                });
+            }
+        } catch (error) {
+            console.error("Error during Google callback:", error);
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "An error occurred during the callback. Please try again.",
+            });
+        }
+    }
+}
+
 // Event listener untuk form login
 document.getElementById('form').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -106,11 +156,18 @@ document.getElementById('form').addEventListener('submit', (event) => {
     login(username, password);
 });
 
+// Inisialisasi Google login
 window.onload = () => {
-    google.accounts.id.initialize({
-        client_id: "161294722609-k3mgi3nbmb9ulrpd8hdd3da3rj05l3jg.apps.googleusercontent.com",
-        callback: handleCredentialResponse,
-    });
+    // Tangani callback dari Google OAuth
+    if (window.location.search.includes("code")) {
+        handleGoogleCallback();
+    } else {
+        // Inisialisasi Google Sign-In
+        google.accounts.id.initialize({
+            client_id: GOOGLE_CLIENT_ID,
+            callback: handleCredentialResponse,
+        });
 
-    google.accounts.id.prompt(); // Optional: Show the prompt if needed
+        google.accounts.id.prompt(); // Optional: Show the prompt if needed
+    }
 };
