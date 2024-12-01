@@ -55,18 +55,20 @@ function googleLogin() {
 }
 
 // Fungsi untuk menangani token Google yang diterima
-function handleCredentialResponse(response) {
+async function handleCredentialResponse(response) {
     const token = response.credential;
-    fetch('https://zenversegames-ba223a40f69e.herokuapp.com/login/google', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ token: token })
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.success) {
+    try {
+        const res = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/auth/google/callback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ token: token }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
             localStorage.setItem('token', data.token);
             Swal.fire({
                 icon: "success",
@@ -76,24 +78,24 @@ function handleCredentialResponse(response) {
                 showConfirmButton: false
             });
             setTimeout(() => {
-                window.location.href = 'admin/dashboard.html';
+                // Redirect ke URL yang dikembalikan dari back-end
+                window.location.href = data.redirect || 'admin/dashboard.html';
             }, 2000);
         } else {
             Swal.fire({
                 icon: "error",
                 title: "Login Failed",
-                text: "Google login failed!",
+                text: data.message || "Google login failed!",
             });
         }
-    })
-    .catch((error) => {
+    } catch (error) {
         console.error("Error during Google login:", error);
         Swal.fire({
             icon: "error",
             title: "Error",
             text: "An error occurred. Please try again.",
         });
-    });
+    }
 }
 
 // Event listener untuk form login
