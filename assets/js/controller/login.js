@@ -119,7 +119,6 @@ function handleCredentialResponse(response) {
     });
 }
 
-
 // Fungsi menangani callback Google OAuth
 async function handleGoogleCallback() {
     const urlParams = new URLSearchParams(window.location.search);

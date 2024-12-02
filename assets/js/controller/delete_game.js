@@ -24,7 +24,7 @@ window.confirmDelete = confirmDelete;
 
 function deleteData(gameDelete) {
     var gameId = gameDelete;
-    var target_url = "https://asia-southeast2-backend-438507.cloudfunctions.net/parkirgratisbackend/data/tempat/" + gameId;
+    var target_url = `https://zenversegames-ba223a40f69e.herokuapp.com/delete/${gameId}`; // Perbaikan di sini
 
     var requestOptions = {
         method: 'DELETE',
@@ -32,10 +32,21 @@ function deleteData(gameDelete) {
     };
 
     fetch(target_url, requestOptions)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(result => {
             console.log(result);
-            location.reload();
+            Swal.fire({
+                icon: 'success',
+                title: 'Deleted!',
+                text: `Data with ID ${gameId} has been deleted.`,
+            }).then(() => {
+                location.reload();
+            });
         })
         .catch(error => {
             Swal.fire({
