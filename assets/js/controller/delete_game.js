@@ -24,7 +24,7 @@ window.confirmDelete = confirmDelete;
 
 function deleteData(gameDelete) {
     var gameId = gameDelete;
-    var target_url = `https://zenversegames-ba223a40f69e.herokuapp.com/delete/${gameId}`; // Perbaikan di sini
+    var target_url = `https://zenversegames-ba223a40f69e.herokuapp.com/delete/${gameId}`;
 
     var requestOptions = {
         method: 'DELETE',
