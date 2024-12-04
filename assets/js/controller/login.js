@@ -1,8 +1,9 @@
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
-import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
+import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
 
 addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
+// Fungsi login dengan username dan password
 async function login(username, password) {
     try {
         const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/login', {
@@ -16,23 +17,22 @@ async function login(username, password) {
         const data = await response.json();
 
         if (response.status === 200) {
-            localStorage.setItem('token', data.token);
+            localStorage.setItem('token', data.token); // Simpan token
             Swal.fire({
                 icon: "success",
                 title: "Login Successful",
-                text: "You will be directed to dashboard",
+                text: "Redirecting to dashboard...",
                 timer: 2000,
                 showConfirmButton: false
-              });
-              setTimeout(() => {
+            });
+            setTimeout(() => {
                 window.location.href = 'admin/dashboard.html';
-              }, 2000);
+            }, 2000);
         } else {
             Swal.fire({
                 icon: "error",
                 title: "Login Failed",
-                text: "Username atau password salah!",
-                
+                text: data.message || "Username or password incorrect!",
             });
         }
     } catch (error) {
@@ -40,12 +40,12 @@ async function login(username, password) {
         Swal.fire({
             icon: "warning",
             title: "Login Failed",
-            text: console.error(error)
+            text: "An error occurred during login.",
         });
     }
 }
 
-
+// Event listener untuk form login
 document.getElementById('form').addEventListener('submit', (event) => {
     event.preventDefault();
     const username = document.getElementById('username').value;
