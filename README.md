@@ -5,6 +5,7 @@ This website is currently made by me and my friend with reference from hoyo webs
 
 Project Started: Sunday, May 19th 2024.<br />
 Project Finished: Tuesday, July 9th 2024. (7 weeks, 2 days)
+Project Maintenance : July 8th 2024 - Now
 
 Front-end devs & project lead: Haris (https://github.com/hrisz)<br />
 API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
@@ -20,7 +21,6 @@ API & Back-end devs: Rayfan (https://github.com/rayfanaqbil)
 |Publish game form menu | Done✅|
 |Dashboard menu | Done✅|
 |Captcha Verify | Done✅|
-|Google OAuth Login | Under Development |
 
 # Update
 |Description|Date|Status|
