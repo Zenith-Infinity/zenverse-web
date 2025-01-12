@@ -1,30 +1,61 @@
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
 import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
 
+// Menambahkan stylesheet SweetAlert2
 addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
-// Fungsi login dengan username dan password
+
+function validateLoginInput(username, password) {
+    const usernamePattern = /^[a-zA-Z0-9_]+$/;  
+    if (!usernamePattern.test(username)) {
+        return "Username is invalid. Only alphanumeric characters and underscores are allowed.";
+    }
+
+    if (password.length < 8) {
+        return "Password must be at least 8 characters long.";
+    }
+
+    return null; 
+}
+
+
 async function login(username, password) {
+    
+    const validationError = validateLoginInput(username, password);
+    if (validationError) {
+        Swal.fire({
+            icon: "warning",
+            title: "Input Error",
+            text: validationError,
+        });
+        return;
+    }
+
     try {
+        
         const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/login', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ User_name: username, Password: password })
+            body: JSON.stringify({ User_name: username, Password: password }),
         });
 
         const data = await response.json();
 
         if (response.status === 200) {
-            localStorage.setItem('token', data.token); // Simpan token
+
+            localStorage.setItem('token', data.token);
+
+            // Tampilkan pesan sukses
             Swal.fire({
                 icon: "success",
                 title: "Login Successful",
                 text: "Redirecting to dashboard...",
                 timer: 2000,
-                showConfirmButton: false
+                showConfirmButton: false,
             });
+
             setTimeout(() => {
                 window.location.href = 'admin/dashboard.html';
             }, 2000);
@@ -36,16 +67,15 @@ async function login(username, password) {
             });
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error during login:', error);
         Swal.fire({
-            icon: "warning",
+            icon: "error",
             title: "Login Failed",
-            text: "An error occurred during login.",
+            text: "An error occurred during login. Please try again later.",
         });
     }
 }
 
-// Event listener untuk form login
 document.getElementById('form').addEventListener('submit', (event) => {
     event.preventDefault();
     const username = document.getElementById('username').value;
