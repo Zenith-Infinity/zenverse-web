@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             Rating: 0,
             Game_logo: document.getElementById("logo").value,
             Game_banner: document.getElementById("banner").value,
-            Preview: document.getElementById("preview").value,
+            Preview: document.getElementById("preview").value + "?rel=0&modestbranding=1",
             Link_games: document.getElementById("gamelinks").value,
             Desc: document.getElementById("aboutgame").value,
         };
