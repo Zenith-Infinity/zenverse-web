@@ -12,6 +12,10 @@ div {
   unicode-bidi: isolate;
 }
 
+.main-content {
+  display: none;
+}
+
 .home-container {
   width: 100%;
   height: 100%;
