@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
 </head>
 
 <body>
     <div id="load-screen" class="z-20 h-[100vh] bg-slate-700"></div>
     <!-- Navigation bar -->
     <div id="main" class="main-content">
-        <nav class="fixed top-0 z-10 flex items-center md:justify-between sm:justify-end justify-center p-2 w-full h-20">
-            <span class="flex gap-4 justify-center md:ml-auto md:pr-10 items-center">
+        <nav class="fixed top-0 z-10 flex items-center md:justify-between justify-end p-2 w-full h-20">
+            <span class="md:flex gap-4 justify-center md:ml-auto hidden md:pr-10 items-center">
                 <!-- Navbar button -->
                 <button id="aboutButton" class="signup-btn border-2 border-transparent border-b-white shadow-transparent hover:border-b-sky-500 hover:border-x-sky-500 transition px-4 py-1 text-white text-sm flex items-center ml-auto hover:shadow-lg hover:shadow-sky-500/50">
                     <span>
@@ -43,6 +44,24 @@
             </span>
             <!-- Navbar image/Zenith Interactive logo -->
             <img src="assets/icon/blue-long-logo.png" alt="homelogo" class="home-logo justify-start absolute object-center object-left hidden md:block" width="150px">
+            <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="md:hidden block text-white focus:ring-2 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-slate-800" type="button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
+            </button>
+                
+            <!-- Dropdown menu -->
+            <div id="dropdownDivider" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                    <li>
+                        <a href="pages/main.html#gamelist" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">List Games</a>
+                    </li>
+                    <li>
+                        <a href="pages/subform.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Submit Games</a>
+                    </li>
+                </ul>
+                <div class="py-2">
+                    <a href="pages/signmenu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
+                </div>
+            </div>
         </nav>
 
         <!-- Masking on top -->
@@ -134,6 +153,7 @@
     </div>
 <script src="assets/js/main-scramble.js"></script>
 <script type="module" src="assets/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
