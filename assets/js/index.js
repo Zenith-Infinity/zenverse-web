@@ -22,3 +22,8 @@ async function about() {
 document.getElementById('aboutButton').addEventListener('click', () => {
     about();
 });
+
+window.onload = function() {
+    document.getElementById('load-screen').classList.add('hidden');
+    document.getElementById('main').classList.add('block');
+};
