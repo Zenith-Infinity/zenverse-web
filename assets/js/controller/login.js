@@ -46,6 +46,7 @@ async function login(username, password) {
         if (response.status === 200) {
 
             localStorage.setItem('token', data.token);
+            localStorage.setItem('csrf_token', data.csrf_token);
 
             // Tampilkan pesan sukses
             Swal.fire({
