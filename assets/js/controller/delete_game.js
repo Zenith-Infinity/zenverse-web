@@ -39,7 +39,6 @@ function deleteData(gameDelete) {
             return response.json();
         })
         .then(result => {
-            console.log(result);
             Swal.fire({
                 icon: 'success',
                 title: 'Deleted!',
@@ -54,6 +53,5 @@ function deleteData(gameDelete) {
                 title: 'Oops...',
                 text: 'Something went wrong! Please try again.',
             });
-            console.log('Error:', error);
         });
 }

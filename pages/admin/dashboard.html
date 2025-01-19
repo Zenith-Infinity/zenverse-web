@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      img-src *;
+      script-src 'unsafe-eval' 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://apis.google.com https://cdn.tailwindcss.com/ https://code.jquery.com/jquery-3.6.0.min.js https://bukulapak.github.io/api/process.js https://bukulapak.github.io/element/process.js http://localhost:5500;
+      style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com/ https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css;
+      connect-src 'self' https://zenversegames-ba223a40f69e.herokuapp.com/games https://zenversegames-ba223a40f69e.herokuapp.com/dashboard https://zenversegames-ba223a40f69e.herokuapp.com/delete/ https://zenversegames-ba223a40f69e.herokuapp.com/logout;
+      font-src 'self' https://fonts.gstatic.com;">
     <title>Dashboard | Zenverse</title>
     <link rel="icon" href="../../assets/icon/blue-logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="../../assets/js/fetch_game.js"></script>
+    <script type="module" nonce="zen711213" src="../../assets/js/fetch_game.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -139,7 +146,7 @@
                                 <div x-show="dropdownOpen"
                                     class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
                                     style="display: none;">
-                                    <button id="logoutButton" onclick="logout()" class="block w-full px-4 py-2 text-sm text-gray-700 text-left hover:bg-indigo-600 hover:text-white">Logout</button>
+                                    <button id="logoutButton" onclick="logout()" nonce="zen711213" class="block w-full px-4 py-2 text-sm text-gray-700 text-left hover:bg-indigo-600 hover:text-white">Logout</button>
                                 </div>
                             </div>
                         </div>                        
@@ -234,7 +241,7 @@
                                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
                                                     <div class="flex justify-center items-center">
                                                         <a href="editform.html?gameId=#gameEdit#" class="text-white mx-2 px-4 py-1 bg-sky-500 hover:bg-sky-900 rounded-lg">Edit</a>
-                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
+                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" nonce="zen711213" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -266,7 +273,7 @@
                                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
                                                     <div class="flex justify-center items-center">
                                                         <a href="editform.html?gameId=#gameEdit#" class="text-white mx-2 px-4 py-1 bg-sky-500 hover:bg-sky-900 rounded-lg">Edit</a>
-                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
+                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" nonce="zen711213" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -298,7 +305,7 @@
                                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
                                                     <div class="flex justify-center items-center">
                                                         <a href="editform.html?gameId=#gameEdit#" class="text-white mx-2 px-4 py-1 bg-sky-500 hover:bg-sky-900 rounded-lg">Edit</a>
-                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
+                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" nonce="zen711213" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -330,7 +337,7 @@
                                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
                                                     <div class="flex justify-center items-center">
                                                         <a href="editform.html?gameId=#gameEdit#" class="text-white mx-2 px-4 py-1 bg-sky-500 hover:bg-sky-900 rounded-lg">Edit</a>
-                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
+                                                        <button type="button" id="deleteButton" onclick="confirmDelete('#gameDelete#')" nonce="zen711213" class="text-white px-3 py-1 bg-rose-600 hover:bg-rose-900 rounded-lg">Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -344,8 +351,8 @@
             </div>
         </div>
     </div>
-    <script type="module" src="../../assets/js/controller/delete_game.js"></script>
-    <script type="module" src="../../assets/js/controller/logout.js"></script>
-    <script type="module" src="../../assets/js/controller/dashboard.js"></script>
+    <script type="module" nonce="zen711213" src="../../assets/js/controller/delete_game.js"></script>
+    <script type="module" nonce="zen711213" src="../../assets/js/controller/logout.js"></script>
+    <script type="module" nonce="zen711213" src="../../assets/js/controller/dashboard.js"></script>
 </body>
 </html>
