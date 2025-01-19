@@ -36,11 +36,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
+      const csrfToken = localStorage.getItem('csrf_token') || document.cookie.replace(/(?:(?:^|.*;\s*)csrf_token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         // Kirim permintaan ke backend menggunakan token
         const response = await fetch('https://zenversegames-ba223a40f69e.herokuapp.com/dashboard', {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + token,
+                'X-CSRF-Token': csrfToken
             }
         });
         const data = await response.json();
