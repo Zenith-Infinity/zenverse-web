@@ -11,7 +11,74 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        const gameName = document.getElementById("gamename").value.trim();
+        const devName = document.getElementById("devname").value.trim();
+        const aboutDevs = document.getElementById("aboutdevs").value.trim();
+        const genre = document.getElementById("genre").value.trim();
+        const aboutGame = document.getElementById("aboutgame").value.trim();
+        const logoUrl = document.getElementById("logo").value;
+        const bannerUrl = document.getElementById("banner").value;
+        const previewUrl = document.getElementById("preview").value;
+        const gameLinkUrl = document.getElementById("gamelinks").value;
+        const youtubeEmbedRegex = /^https:\/\/www\.youtube\.com\/embed\/[\w-]+$/;
         const captchaResp = grecaptcha.getResponse();
+        const imageRegex = /\.(jpg|jpeg|png|webp)$/i;
+        const urlRegex = /^https:\/\/[\w.-]+(?:\.[\w\.-]+)+[^\s]*$/;
+
+        if (
+            !gameName ||
+            !devName ||
+            !aboutDevs ||
+            !genre ||
+            !logoUrl ||
+            !bannerUrl ||
+            !previewUrl ||
+            !gameLinkUrl ||
+            !aboutGame
+        ) {
+            Swal.fire({
+                icon: "error",
+                title: "Failed to Submit",
+                text: "Fill all the fields before submit.",
+            });
+            return;
+        }
+
+        if (!imageRegex.test(logoUrl)) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Logo URL",
+                text: "The Game Logo URL must end with a valid image extension (.jpg, .jpeg, .png, .webp).",
+            });
+            return;
+        }
+
+        if (!imageRegex.test(bannerUrl)) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Banner URL",
+                text: "The Game Banner URL must end with a valid image extension (.jpg, .jpeg, .png, .gif, .webp).",
+            });
+            return;
+        }
+
+        if (!youtubeEmbedRegex.test(previewUrl)) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Preview URL",
+                text: "The Preview field must contain a valid YouTube embed URL, starting with 'https://www.youtube.com/embed/' followed by the video ID.",
+            });
+            return;
+        }
+
+        if (!urlRegex.test(gameLinkUrl)) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Game Link URL",
+                text: "The Game Link field must contain a valid URL that starts with 'https://'.",
+            });
+            return;
+        }
 
         if (!captchaResp) {
             Swal.fire({
