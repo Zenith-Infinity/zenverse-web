@@ -3,6 +3,17 @@ import {addCSS} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
 
 addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
+tailwind.config = {
+    theme: {
+      extend: {
+        brightness: {
+          25: '0.25',
+          35: '0.35',
+        },
+      },
+    },
+  };
+
 let splash = document.querySelector('.splash');
 let logo = document.querySelector('.splash-header');
 let logoSpan = document.querySelectorAll('.splash-logo');
@@ -57,3 +68,23 @@ window.onload = () => {
         }, 2250);
     }, 0);
 };
+
+function updateImageBrightness() {
+    const indicators = document.querySelectorAll('.carousel-indicators span');
+    indicators.forEach((span) => {
+      const button = span.querySelector('button');
+      const img = span.querySelector('img');
+      if (button.getAttribute('aria-current') === "true") {
+        img.classList.remove('brightness-50');
+      } else {
+        img.classList.add('brightness-50');
+      }
+    });
+  }
+
+  // Initialize brightness on page load
+  updateImageBrightness();
+
+  // Listen for changes in the carousel
+  const carousel = document.querySelector('#carouselExampleSlidesOnly');
+  carousel.addEventListener('slid.bs.carousel', updateImageBrightness);
