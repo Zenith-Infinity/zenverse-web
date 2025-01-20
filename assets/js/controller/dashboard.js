@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             showConfirmButton: false
         });
         setTimeout(() => {
-            // window.location.href = '../signmenu.html';
+            window.location.href = '../signmenu.html';
         }, 2000);
         return;
     }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 showConfirmButton: false
             });
             setTimeout(() => {
-                // window.location.href = '../signmenu.html';
+                window.location.href = '../signmenu.html';
             }, 2000);
         }
     } catch (error) {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             showConfirmButton: false
         });
         setTimeout(() => {
-            // window.location.href = '../signmenu.html';
+            window.location.href = '../signmenu.html';
         }, 2000);
     }
 });

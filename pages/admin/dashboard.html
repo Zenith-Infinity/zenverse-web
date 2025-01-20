@@ -354,5 +354,14 @@
     <script type="module" nonce="zen711213" src="../../assets/js/controller/delete_game.js"></script>
     <script type="module" nonce="zen711213" src="../../assets/js/controller/logout.js"></script>
     <script type="module" nonce="zen711213" src="../../assets/js/controller/dashboard.js"></script>
+    <script nonce="zen711213">
+        function saveGameIdAndNavigate(gameId) {
+          // Store the gameId in localStorage
+          localStorage.setItem("selectedGameId", gameId);
+    
+          // Navigate to the detailed page
+          window.location.href = "editform.html";
+        }
+      </script>
 </body>
 </html>

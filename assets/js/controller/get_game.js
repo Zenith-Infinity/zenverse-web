@@ -56,7 +56,7 @@ export function fillGameList(results) {
                 '<div id="gameGenre" class="text-transparent h-2 animate-pulse bg-slate-200 rounded col-span-2">#gameGenre#</div>',
                 '<div id="gameGenre" class="text-sm font-medium leading-5 text-gray-900 font-semibold"> ' + value.genre + ' </div>'
             )
-            .replace("#gameEdit#", value._id)
+            .replace('<a href="editform.html?gameId=#gameEdit#" nonce="zen711213" class="text-white mx-2 px-4 py-1 bg-sky-500 hover:bg-sky-900 rounded-lg">Edit</a>', '<a type="button" onclick="saveGameIdAndNavigate(\'' + value._id + '\')" nonce="zen711213" class="text-white mx-2 px-4 py-1 bg-sky-500 hover:bg-sky-900 rounded-lg">Edit</a>')
             .replace("#gameDelete#", value._id);
 
         gameListContent += content;
