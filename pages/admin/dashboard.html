@@ -362,6 +362,14 @@
           // Navigate to the detailed page
           window.location.href = "editform.html";
         }
+
+        function saveGameIdAndNavigateNotif(gameId) {
+          // Store the gameId in localStorage
+          localStorage.setItem("selectedGameId", gameId);
+    
+          // Navigate to the detailed page
+          window.open("../detailed.html", "_blank");
+        }
       </script>
 </body>
 </html>

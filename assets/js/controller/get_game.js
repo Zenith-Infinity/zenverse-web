@@ -90,7 +90,7 @@ function notifGame(value) {
         )
         .replace(
             '<a href="#" id="gameId" class="flex items-center px-4 py-3 -mx-2 text-gray-700 hover:text-white hover:bg-blue-500">',
-            '<a href="../detailed.html?gameId=' + value._id + '" id="gameId" target="_blank" class="flex items-center px-4 py-3 -mx-2 text-gray-700 hover:text-white hover:bg-blue-500">'
+            '<a type="button" onclick="saveGameIdAndNavigateNotif(\'' + value._id + '\')" id="gameId" target="_blank" class="flex items-center px-4 py-3 -mx-2 text-gray-700 hover:text-white hover:bg-blue-500">'
         );
 
     addInner("newNotif", notifcontent);
