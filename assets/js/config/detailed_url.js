@@ -14,18 +14,6 @@ if (!gameId) {
     // If valid, construct the API URL
     var urlFetch = "https://zenversegames-ba223a40f69e.herokuapp.com/games/" + gameId;
 
-    // Example: Fetch data using the valid urlFetch
-    fetch(urlFetch)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Game Data:", data);
-            // Perform further operations with the fetched data
-        })
-        .catch((error) => {
-            console.error("Error fetching game data:", error);
-            alert("Failed to fetch game details. Redirecting...");
-            window.location.href = "index.html"; // Redirect on fetch failure
-        });
 }
 
 export { urlFetch };

@@ -2,7 +2,6 @@ import { setInner } from "https://bukulapak.github.io/element/process.js";
 import { fillDetailed, pageTitle } from "../temp/detailed-temp.js";
 
 export function fillDetailGame(result) {
-    console.log(result);
 
     if (Array.isArray(result)) {
         result.forEach(fillPageTitle);

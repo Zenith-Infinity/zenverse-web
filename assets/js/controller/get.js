@@ -3,7 +3,6 @@ import { fillGame } from "../temp/main-temp.js";
 
 export function fillGameList(results) {
     results.forEach(fillTheList);
-    console.log(results)
 }
 
 function fillTheList(value) {
