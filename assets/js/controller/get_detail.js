@@ -33,7 +33,7 @@ function fillAllDetail(value) {
 
 function fillPageTitle(value) {
     let titlecon =
-    pageTitle.replace('<title id="detailTitle">Game Detail | Zenverse</title>', value.name + ' | Zenverse')
+    pageTitle.replace('<title id="detailTitle">Game Detail | Zenverse</title>', (value.name ? value.name : 'Game Not Found')  + ' | Zenverse')
     setInner("detailTitle", titlecon)
 }
 
