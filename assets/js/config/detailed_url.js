@@ -49,8 +49,33 @@ if (!gameId) {
                   console.error("Error:", error);
                 });
             });
-          } else
-          if (response.status === 500) {
+          } else if (response.status === 500) {
+            Swal.fire({
+              icon: "error",
+              title: "Game Not Available",
+              text: "There was an issue fetching the game details. Please try again later.",
+              customClass: {
+                container: 'backdrop-blur-md',
+             },
+             timer: 2000,
+            });
+            setTimeout(() => {
+                window.location.href = "main.html";
+            }, 2000);
+          } else if (response.status === 400) {
+            Swal.fire({
+              icon: "error",
+              title: "Game Not Available!",
+              text: "The game is not available or has been deleted.",
+              customClass: {
+                container: 'backdrop-blur-md',
+             },
+             timer: 2000,
+            });
+            setTimeout(() => {
+                window.location.href = "main.html";
+            }, 2000);
+          } else {
             Swal.fire({
               icon: "error",
               title: "Game Not Available",
