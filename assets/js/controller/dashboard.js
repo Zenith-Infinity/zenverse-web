@@ -106,6 +106,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+document.getElementById('changePass').addEventListener('click', () => {
+  Swal.fire({
+    title: "Change Password",
+    html: `
+      <input id="currPassword" type="password" class="swal2-input" placeholder="Current Password">
+      <input id="newPassword" type="password" class="swal2-input" placeholder="New Password">
+    `,
+    focusConfirm: false,
+    showCancelButton: true,
+    confirmButtonText: "Change",
+    cancelButtonText: "Nevermind",
+    preConfirm: () => {
+      return [
+        document.getElementById("swal-input1").value,
+        document.getElementById("swal-input2").value
+      ];
+    }
+  });
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('cancelToast') === 'true') {
