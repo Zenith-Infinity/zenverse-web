@@ -173,7 +173,6 @@ document.getElementById('changePass').addEventListener('click', async () => {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('cancelToast') === 'true') {
 
