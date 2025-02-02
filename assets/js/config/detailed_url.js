@@ -3,6 +3,7 @@
 
 const gameId = localStorage.getItem("selectedGameId");
 
+let urlFetch = ""
 
 if (!gameId) {
     Swal.fire({
@@ -11,9 +12,9 @@ if (!gameId) {
       text: "The game you're looking for has been deleted or not available.",
       timer: 2000,
     });
-    setTimeout(() => {
-        window.location.href = "main.html";
-    }, 2000);
+    // setTimeout(() => {
+    //     window.location.href = "main.html";
+    // }, 2000);
 // } else if (!/^[a-fA-F0-9]{24}$/.test(gameId)) {
 //     Swal.fire({
 //         icon: "warning",
@@ -25,73 +26,38 @@ if (!gameId) {
 //           window.location.href = "main.html";
 //       }, 2000);
 } else {
-    // If valid, construct the API URL
-    var urlFetch = "https://zenversegames-ba223a40f69e.herokuapp.com/games/" + gameId;
+  var decryptUrl = "https://zenversegames-ba223a40f69e.herokuapp.com/decrypt?encrypted_id=" + gameId;
 
-    fetch(urlFetch, {
-        method: "GET",
-      })
-        .then((response) => {
-          if (response.status === 200) {
-            response.json().then((data) => {
-              var urlEncrypt = "https://zenversegames-ba223a40f69e.herokuapp.com/encrypt?id=" + gameId;
-              fetch(urlEncrypt, {
-                method: "GET",
-              })
-                .then((response) => {
-                  if (response.status === 200) {
-                    response.json().then((data) => {
-                      localStorage.setItem("selectedGameId", data.encrypted_id);
-                    });
-                  }
-                })
-                .catch((error) => {
-                  console.error("Error:", error);
-                });
-            });
-          } else if (response.status === 500) {
-            Swal.fire({
-              icon: "error",
-              title: "Game Not Available",
-              text: "There was an issue fetching the game details. Please try again later.",
-              customClass: {
-                container: 'backdrop-blur-md',
-             },
-             timer: 2000,
-            });
-            setTimeout(() => {
-                window.location.href = "main.html";
-            }, 2000);
-          } else if (response.status === 400) {
-            Swal.fire({
-              icon: "error",
-              title: "Game Not Available!",
-              text: "The game is not available or has been deleted.",
-              customClass: {
-                container: 'backdrop-blur-md',
-             },
-             timer: 2000,
-            });
-            setTimeout(() => {
-                window.location.href = "main.html";
-            }, 2000);
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "Game Not Available",
-              text: "There was an issue fetching the game details. Please try again later.",
-              customClass: {
-                container: 'backdrop-blur-md',
-             },
-             timer: 2000,
-            });
-            setTimeout(() => {
-                window.location.href = "main.html";
-            }, 2000);
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
+  fetch(decryptUrl, { method: "GET" })
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("Failed to decrypt game ID");
+      }
+    })
+    .then((data) => {
+      const decryptedId = data.decrypted_id;
+      localStorage.setItem("decid", decryptedId);
+
+      urlFetch = "https://zenversegames-ba223a40f69e.herokuapp.com/games/" + decryptedId;
+
+      return fetch("https://zenversegames-ba223a40f69e.herokuapp.com/encrypt?id=" + decryptedId, { method: "GET" });
+    })
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("Failed to encrypt game ID");
+      }
+    })
+    .then((data) => {
+      localStorage.setItem("selectedGameId", data.encrypted_id);
+      localStorage.removeItem("encid");
+      localStorage.removeItem("decid");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
     });
 }
 
