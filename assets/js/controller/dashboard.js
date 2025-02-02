@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = await response.json();
 
         if (response.status === 200) {
+          document.getElementById("nameAdmin").textContent = "Admin " + data.name;
             if (!localStorage.getItem('alertShown')) {
                 const Toast = Swal.mixin({
                     toast: true,
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 Toast.fire({
                     icon: "success",
                     title: "Anda telah masuk",
-                    text: data.message,
+                    text: "Selamat datang, Admin " + data.name,
                 });
                 localStorage.setItem('alertShown', 'true');
             }
