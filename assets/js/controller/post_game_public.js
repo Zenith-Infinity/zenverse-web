@@ -89,9 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
-
-
         const formData = {
             Name: document.getElementById("gamename").value,
             Dev_name: {
@@ -112,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "X-CSRF-Token": csrfToken,
                 },
                 body: JSON.stringify(formData),
             });
