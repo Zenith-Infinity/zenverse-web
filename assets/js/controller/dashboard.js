@@ -100,9 +100,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             },
             showConfirmButton: false
         });
-        setTimeout(() => {
-            window.location.href = '../signmenu.html';
-        }, 2000);
+        // setTimeout(() => {
+        //     window.location.href = '../signmenu.html';
+        // }, 2000);
     }
 });
 

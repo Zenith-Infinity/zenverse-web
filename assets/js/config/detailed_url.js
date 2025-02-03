@@ -12,9 +12,9 @@ if (!gameId) {
       text: "The game you're looking for has been deleted or not available.",
       timer: 2000,
     });
-    // setTimeout(() => {
-    //     window.location.href = "main.html";
-    // }, 2000);
+    setTimeout(() => {
+        window.location.href = "main.html";
+    }, 2000);
 // } else if (!/^[a-fA-F0-9]{24}$/.test(gameId)) {
 //     Swal.fire({
 //         icon: "warning",
