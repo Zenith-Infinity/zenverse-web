@@ -22,11 +22,11 @@ if (!gameId) {
             console.log("Game Data:", data);
             // Perform further operations with the fetched data
         })
-        .catch((error) => {
-            console.error("Error fetching game data:", error);
-            alert("Failed to fetch game details. Redirecting...");
-            window.location.href = "dashboard.html"; // Redirect on fetch failure
-        });
+        // .catch((error) => {
+        //     console.error("Error fetching game data:", error);
+        //     alert("Failed to fetch game details. Redirecting...");
+        //     window.location.href = "dashboard.html"; // Redirect on fetch failure
+        // });
 }
 
 export { urlPUT };
